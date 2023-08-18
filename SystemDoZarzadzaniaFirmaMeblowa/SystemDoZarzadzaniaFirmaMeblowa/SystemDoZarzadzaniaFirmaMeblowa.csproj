@@ -70,6 +70,10 @@
     <Compile Include="Commands\BaseCommand\CommandBase.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Page Include="Dictionaries\LoginPageDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -149,7 +153,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\LoginPageCommands\" />
-    <Folder Include="Dictionaries\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +166,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Zdjecie1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -13,10 +13,28 @@
     <Grid>
         <TabControl Margin="0,-25,0.333,-0.333">
             <TabItem Header="LoginPage">
-               
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="206*"/>
+                        <ColumnDefinition Width="581*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1" Margin="0,0,-0.333,0.333">
+                        <Image Source="Zdjecie1.jpg" Width="auto" Height="auto" Margin="-46,-21,-58,-12"/>
+                    </Grid>
+                    <Grid Grid.Column="0" Background="#FFBFBCBC" Margin="-2,-2,0,-11.667" >
+                        <Button Content="Zaloguj" Margin="10,0,12,34" VerticalAlignment="Bottom" Height="53" Style="{StaticResource LoginButtonStyle}"/>
+                        <TextBox Style="{StaticResource LoginTextBoxStyle}" Height="52" Margin="10,111,12,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="40"/>
+                        <Label Content="Login" Margin="10,62,12,0" VerticalAlignment="Top" FontSize="30" Height="49" FontWeight="Bold"/>
+                        <Label Content="Hasło" Margin="12,168,10,0" VerticalAlignment="Top" Height="49" FontSize="30" FontWeight="Bold" />
+                        <PasswordBox Style="{StaticResource LoginTextPasswordStyle}" Margin="12,222,12,0" VerticalAlignment="Top" Height="52" FontSize="40"/>
+
+
+                    </Grid>
+
+                </Grid>
             </TabItem>
             <TabItem Header="TabItem">
-               
+
             </TabItem>
         </TabControl>
 
