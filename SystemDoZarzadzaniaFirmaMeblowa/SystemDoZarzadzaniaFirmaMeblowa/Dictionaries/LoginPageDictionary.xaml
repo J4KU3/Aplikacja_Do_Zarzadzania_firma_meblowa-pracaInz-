@@ -9,8 +9,12 @@
                       BlurRadius="10"/>
 
     <Style x:Key="LoginButtonStyle" TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{x:Null}"/>
-        <Setter Property="BorderBrush" Value="Black"/>
+        
+
+        <Setter Property="Background" Value="DarkBlue"/>
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
 
         <Setter Property="Template">
             <Setter.Value>
@@ -26,10 +30,9 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="DarkBlue"/>
-                <Setter Property="BorderBrush" Value="White"/>
-                <Setter Property="Foreground" Value="White"/>
-                <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
+                <Setter Property="Background" Value="Black"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="Effect" Value="{x:Null}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
