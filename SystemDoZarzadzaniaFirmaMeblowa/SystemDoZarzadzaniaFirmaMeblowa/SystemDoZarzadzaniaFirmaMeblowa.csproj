@@ -68,6 +68,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\BaseCommand\CommandBase.cs" />
+    <Compile Include="Commands\Employees\LoadEmployeesCommand.cs" />
+    <Compile Include="Commands\LoginPageCommands\LoginCommand.cs" />
+    <Compile Include="Commands\Navigation\ChangeTabCommand.cs" />
+    <Compile Include="Models\ClientsModel.cs" />
+    <Compile Include="Models\ComplaintsModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\OrdersModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Page Include="Dictionaries\LoginPageDictionary.xaml">
@@ -151,10 +158,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Commands\LoginPageCommands\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Data\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
