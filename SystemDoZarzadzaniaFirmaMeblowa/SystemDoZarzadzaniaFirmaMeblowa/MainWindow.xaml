@@ -11,7 +11,7 @@
         <Vm:MainViewModel/>
     </Window.DataContext>
     <Grid>
-        <TabControl Margin="0,-25,0.333,-0.333">
+        <TabControl Margin="0,-25,0.333,-0.333" SelectedIndex="{Binding SelectedPage}">
             <TabItem Header="LoginPage">
                 <Grid>
                     <Grid.ColumnDefinitions>

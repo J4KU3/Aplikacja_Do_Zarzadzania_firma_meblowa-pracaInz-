@@ -68,7 +68,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\BaseCommand\CommandBase.cs" />
-    <Compile Include="Commands\Employees\LoadEmployeesCommand.cs" />
+    <Compile Include="Commands\Emplo\LoadEmployeesCommand.cs" />
     <Compile Include="Commands\LoginPageCommands\LoginCommand.cs" />
     <Compile Include="Commands\Navigation\ChangeTabCommand.cs" />
     <Compile Include="Models\ClientsModel.cs" />

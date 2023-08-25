@@ -13,13 +13,11 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.BaseCommand
 
         public virtual bool CanExecute(object parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
-        public virtual void Execute(object parameter)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void Execute(object parameter);
+        
 
         public void OnCanExecuteChanged()
         {

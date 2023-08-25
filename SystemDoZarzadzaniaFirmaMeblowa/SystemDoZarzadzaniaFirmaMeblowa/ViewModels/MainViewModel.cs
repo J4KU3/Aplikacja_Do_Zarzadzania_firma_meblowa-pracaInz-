@@ -5,11 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SystemDoZarzadzaniaFirmaMeblowa.Models;
+using SystemDoZarzadzaniaFirmaMeblowa.Commands.Emplo;
+using SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation;
 
 namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 {
     public class MainViewModel:BaseViewModel
     {
+        #region Komendy
+       public LoadEmployeesCommand loadEmployeesCommand { get; }
+        public ChangeTabCommand changeTabCommand { get; }
+        #endregion
+
         #region Listy
         private ObservableCollection<EmployeeModel> _listOfEmployee = new ObservableCollection<EmployeeModel>();
 
@@ -22,6 +29,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             set
             {
                 _listOfEmployee = value;
+                loadEmployeesCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -70,9 +78,31 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         }
         #endregion
 
+        #region Zmienne
+
+        private int _selectedPage;
+
+        public int SelectedPage
+        {
+            get
+            {
+                return _selectedPage;
+            }
+            set
+            {
+                _selectedPage = value;
+                changeTabCommand.OnCanExecuteChanged();
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
         public MainViewModel()
         {
-
+            loadEmployeesCommand = new LoadEmployeesCommand(this);
+            loadEmployeesCommand.Execute(0);
+            changeTabCommand = new ChangeTabCommand(this);
         }
     }
 }
