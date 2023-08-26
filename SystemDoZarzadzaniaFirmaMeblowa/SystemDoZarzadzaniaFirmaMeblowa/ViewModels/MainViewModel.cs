@@ -80,6 +80,22 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 
         #region Zmienne
 
+        private EmployeeModel _employee;
+
+        public EmployeeModel ModelEmployee
+        {
+            get
+            {
+                return _employee;
+            }
+            set
+            {
+                _employee = value;
+                OnPropertyChanged();
+            }
+        }
+
+
         private int _selectedPage;
 
         public int SelectedPage
@@ -100,6 +116,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 
         public MainViewModel()
         {
+            _employee = new EmployeeModel(new Data.Employees());
             loadEmployeesCommand = new LoadEmployeesCommand(this);
             loadEmployeesCommand.Execute(0);
             changeTabCommand = new ChangeTabCommand(this);

@@ -23,10 +23,10 @@
                     </Grid>
                     <Grid Grid.Column="0" Background="#FFBFBCBC" Margin="-2,-2,0,-11.667" >
                         <Button Content="Zaloguj" Margin="10,0,12,34" VerticalAlignment="Bottom" Height="53" Style="{StaticResource LoginButtonStyle}"/>
-                        <TextBox Style="{StaticResource LoginTextBoxStyle}" Height="52" Margin="10,111,12,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="40"/>
+                        <TextBox Style="{StaticResource LoginTextBoxStyle}" Height="52" Margin="10,111,12,0" TextWrapping="Wrap" Text="{Binding ModelEmployee.Mail}" VerticalAlignment="Top" FontSize="40"/>
                         <Label Content="Login" Margin="10,62,12,0" VerticalAlignment="Top" FontSize="30" Height="49" FontWeight="Bold"/>
                         <Label Content="Hasło" Margin="12,168,10,0" VerticalAlignment="Top" Height="49" FontSize="30" FontWeight="Bold" />
-                        <PasswordBox Style="{StaticResource LoginTextPasswordStyle}" Margin="12,222,12,0" VerticalAlignment="Top" Height="52" FontSize="40"/>
+                        <TextBox Style="{StaticResource LoginTextBoxStyle}" Text="{Binding ModelEmployee.Passsword}" Margin="12,222,12,0" VerticalAlignment="Top" Height="52" FontSize="40"/>
 
 
                     </Grid>
