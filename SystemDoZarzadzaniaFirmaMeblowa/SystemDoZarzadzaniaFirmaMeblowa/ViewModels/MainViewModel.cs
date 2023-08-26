@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using SystemDoZarzadzaniaFirmaMeblowa.Models;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.Emplo;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation;
+using SystemDoZarzadzaniaFirmaMeblowa.Commands.LoginPageCommands;
 
 namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 {
@@ -15,6 +16,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         #region Komendy
        public LoadEmployeesCommand loadEmployeesCommand { get; }
         public ChangeTabCommand changeTabCommand { get; }
+        public LoginCommand loginCommand { get; }
         #endregion
 
         #region Listy
@@ -91,6 +93,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             set
             {
                 _employee = value;
+                loginCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -108,6 +111,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             {
                 _selectedPage = value;
                 changeTabCommand.OnCanExecuteChanged();
+                loginCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -120,6 +124,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             loadEmployeesCommand = new LoadEmployeesCommand(this);
             loadEmployeesCommand.Execute(0);
             changeTabCommand = new ChangeTabCommand(this);
+            loginCommand = new LoginCommand(this);
         }
     }
 }
