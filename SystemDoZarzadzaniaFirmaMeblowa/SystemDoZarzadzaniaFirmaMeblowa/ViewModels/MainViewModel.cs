@@ -17,6 +17,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
        public LoadEmployeesCommand loadEmployeesCommand { get; }
         public ChangeTabCommand changeTabCommand { get; }
         public LoginCommand loginCommand { get; }
+        public ExitCommand exitCommand { get; }
         #endregion
 
         #region Listy
@@ -125,6 +126,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             loadEmployeesCommand.Execute(0);
             changeTabCommand = new ChangeTabCommand(this);
             loginCommand = new LoginCommand(this);
+            exitCommand = new ExitCommand(this);
         }
     }
 }
