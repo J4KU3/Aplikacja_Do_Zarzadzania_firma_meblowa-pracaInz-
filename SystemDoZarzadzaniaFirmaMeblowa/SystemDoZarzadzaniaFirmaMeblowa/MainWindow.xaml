@@ -33,15 +33,31 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="HomePage">
-                <Grid Background="#FFBFBCBC" Margin="-2,-3,-2.333,-3.667">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="172*"/>
-                        <ColumnDefinition Width="615*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button Content="Wyjdź" Margin="10,0,10.667,13" VerticalAlignment="Bottom" Height="44" Command="{Binding exitCommand}"/>
-                    <Button Content="Wyloguj" Margin="10,0,10.667,62" VerticalAlignment="Bottom" Height="44" Command="{Binding changeTabCommand}" CommandParameter="0"/>
+            <TabItem Header="HomePage" >
+
+                <Grid  Margin="-11,-3,-2.333,-8.667">
+                    <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
+
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="3">
+                            <Button Content="Wyjdź" Margin="10,0,21,13.333" VerticalAlignment="Bottom" Height="44" Command="{Binding exitCommand}"/>
+                            <Button Content="Wyloguj" Margin="10,0,21,62.333" VerticalAlignment="Bottom" Height="44" Command="{Binding changeTabCommand}" CommandParameter="0"/>
+
+                        </Grid>
+
+                    </Grid>
+
+
                 </Grid>
+
             </TabItem>
         </TabControl>
 
