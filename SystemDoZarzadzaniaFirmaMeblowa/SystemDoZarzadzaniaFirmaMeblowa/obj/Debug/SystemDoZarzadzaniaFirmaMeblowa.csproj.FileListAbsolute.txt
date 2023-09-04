@@ -22,3 +22,4 @@ C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarza
 C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\obj\Debug\Dictionaries\LoginPageDictionary.baml
 C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\obj\Debug\App.baml
+C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\obj\Debug\Dictionaries\MainPageDictionary.baml

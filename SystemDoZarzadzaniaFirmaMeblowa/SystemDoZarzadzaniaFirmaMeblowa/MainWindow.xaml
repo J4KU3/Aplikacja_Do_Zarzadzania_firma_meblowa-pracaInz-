@@ -48,8 +48,32 @@
                         </Grid.ColumnDefinitions>
 
                         <Grid Grid.Column="3">
-                            <Button Content="Wyjdź" Margin="10,0,21,13.333" VerticalAlignment="Bottom" Height="44" Command="{Binding exitCommand}"/>
-                            <Button Content="Wyloguj" Margin="10,0,21,62.333" VerticalAlignment="Bottom" Height="44" Command="{Binding changeTabCommand}" CommandParameter="0"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Content="Wyjdź" Margin="10,0,21,13.333" VerticalAlignment="Bottom" Height="44" Command="{Binding exitCommand}"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Content="Wyloguj" Margin="10,0,21,62.333" Command="{Binding changeTabCommand}" CommandParameter="0" Height="44" VerticalAlignment="Bottom"/>
+
+                        </Grid>
+                        <Grid Grid.Column="0">
+                            <Button Style="{StaticResource MainButtonStyle}" Content="Zarządzaj  &#xD;&#xA;Pracownikami" Margin="10,10,10,10.333" Command="{Binding changeTabCommand}" CommandParameter="2" />
+
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="0" Content="Zarządzaj &#xD;&#xA;zamówieniami" Margin="10,10,10,1.333"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="1" Content="Złóż &#xD;&#xA;zamówienie" Margin="10,8.667,10,7.667" />
+                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="2" Content="Generuj &#xD;&#xA;Raport" Margin="10,0.333,10,10.333"/>
+
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="0" Content="Dodaj &#xD;&#xA;Reklamacje" Margin="10,10,10,9.667"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Content="Zarządzaj &#xD;&#xA;reklamacjami " Margin="10,10.333" Grid.Row="1"/>
 
                         </Grid>
 
@@ -58,6 +82,40 @@
 
                 </Grid>
 
+            </TabItem>
+            <TabItem Header="Pracownicy">
+                <Grid>
+                    <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="607*"/>
+                            <ColumnDefinition Width="180*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <DataGrid Height="296" Margin="10,10,9.667,0" VerticalAlignment="Top" ItemsSource="{Binding ListOfEmployee}" AutoGenerateColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Id" Binding="{Binding employeeID}"/>
+                                    <DataGridTextColumn Header="Imię" Binding="{Binding EFirstName}"/>
+                                    <DataGridTextColumn Header="Nazwisko" Binding="{Binding ELastName}"/>
+                                    <DataGridTextColumn Header="Telefon" Binding="{Binding Phone}"/>
+                                    <DataGridTextColumn Header="Mail" Binding="{Binding Mail}"/>
+                                    <DataGridTextColumn Header="Hasło" Binding="{Binding Passsword}"/>
+                                    <DataGridTextColumn Header="Funkcje Admina" Binding="{Binding IsAdmin}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Button Content="Dodaj Pracownika" Margin="10,10,10,0" VerticalAlignment="Top" Height="46"/>
+                            <Button Content="Usuń Pracownika" Margin="10,61,10,0" VerticalAlignment="Top" Height="46"/>
+                            <Button Content="Edytuj Dane" Margin="10,112,10,0" VerticalAlignment="Top" Height="46"/>
+                            <Button Content="Wstecz" Margin="10,0,10,9.333" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="1"/>
+
+                        </Grid>
+                    </Grid>
+
+                </Grid>
             </TabItem>
         </TabControl>
 
