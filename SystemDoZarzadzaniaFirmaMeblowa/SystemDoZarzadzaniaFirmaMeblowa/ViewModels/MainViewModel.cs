@@ -14,10 +14,15 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
     public class MainViewModel:BaseViewModel
     {
         #region Komendy
-       public LoadEmployeesCommand loadEmployeesCommand { get; }
+        //pracownict
+        public LoadEmployeesCommand loadEmployeesCommand { get; }
+        public EmployeeDeleteCommand employeeDeleteCommand { get; }
+        public EditEmployeeCommand editEmployeeCommand { get; }
+        //
         public ChangeTabCommand changeTabCommand { get; }
         public LoginCommand loginCommand { get; }
         public ExitCommand exitCommand { get; }
+
         #endregion
 
         #region Listy
@@ -117,6 +122,15 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             }
         }
 
+        private EmployeeModel _selectedEmployee;
+
+        public EmployeeModel SelectedEmployee
+        {
+            get { return _selectedEmployee; }
+            set { _selectedEmployee = value; employeeDeleteCommand.OnCanExecuteChanged() ;editEmployeeCommand.OnCanExecuteChanged() ; OnPropertyChanged(); }
+        }
+
+
         #endregion
 
         public MainViewModel()
@@ -124,6 +138,8 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             _employee = new EmployeeModel(new Data.Employees());
             loadEmployeesCommand = new LoadEmployeesCommand(this);
             loadEmployeesCommand.Execute(0);
+            employeeDeleteCommand = new EmployeeDeleteCommand(this);
+            editEmployeeCommand = new EditEmployeeCommand(this);
             changeTabCommand = new ChangeTabCommand(this);
             loginCommand = new LoginCommand(this);
             exitCommand = new ExitCommand(this);

@@ -93,7 +93,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Grid Grid.Column="0">
-                            <DataGrid Height="296" Margin="10,10,9.667,0" VerticalAlignment="Top" ItemsSource="{Binding ListOfEmployee}" AutoGenerateColumns="False">
+                            <DataGrid Height="296" Margin="10,10,9.667,0" VerticalAlignment="Top" ItemsSource="{Binding ListOfEmployee}" SelectedItem="{Binding SelectedEmployee}" AutoGenerateColumns="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Id" Binding="{Binding employeeID}"/>
                                     <DataGridTextColumn Header="Imię" Binding="{Binding EFirstName}"/>
@@ -107,10 +107,10 @@
 
                         </Grid>
                         <Grid Grid.Column="1">
-                            <Button Content="Dodaj Pracownika" Margin="10,10,10,0" VerticalAlignment="Top" Height="46"/>
-                            <Button Content="Usuń Pracownika" Margin="10,61,10,0" VerticalAlignment="Top" Height="46"/>
-                            <Button Content="Edytuj Dane" Margin="10,112,10,0" VerticalAlignment="Top" Height="46"/>
-                            <Button Content="Wstecz" Margin="10,0,10,9.333" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="1"/>
+                            <Button Style="{StaticResource AddButtonStyle}" Content="Dodaj Pracownika" Margin="10,10,10,0" VerticalAlignment="Top" Height="46"/>
+                            <Button Style="{StaticResource DeleteButtonStyle}" Content="Usuń Pracownika" Margin="10,61,10,0" VerticalAlignment="Top" Height="46" Command="{Binding employeeDeleteCommand}"/>
+                            <Button Style="{StaticResource EditButtonStyle}" Content="Edytuj Dane" Margin="10,112,10,0" VerticalAlignment="Top" Height="46" Command="{Binding editEmployeeCommand}"/>
+                            <Button Style="{StaticResource BackButtonStyle}" Content="Wstecz" Margin="10,0,10,9.333" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="1"/>
 
                         </Grid>
                     </Grid>

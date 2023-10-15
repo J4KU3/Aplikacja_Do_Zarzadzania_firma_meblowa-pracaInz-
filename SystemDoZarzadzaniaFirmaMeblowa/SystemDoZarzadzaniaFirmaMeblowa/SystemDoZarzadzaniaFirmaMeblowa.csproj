@@ -68,6 +68,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\BaseCommand\CommandBase.cs" />
+    <Compile Include="Commands\Emplo\EditEmployeeCommand.cs" />
+    <Compile Include="Commands\Emplo\EmployeeDeleteCommand.cs" />
     <Compile Include="Commands\Emplo\LoadEmployeesCommand.cs" />
     <Compile Include="Commands\LoginPageCommands\LoginCommand.cs" />
     <Compile Include="Commands\Navigation\ChangeTabCommand.cs" />
@@ -78,6 +80,10 @@
     <Compile Include="Models\OrdersModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Page Include="Dictionaries\EmployeeDictonary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dictionaries\LoginPageDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
