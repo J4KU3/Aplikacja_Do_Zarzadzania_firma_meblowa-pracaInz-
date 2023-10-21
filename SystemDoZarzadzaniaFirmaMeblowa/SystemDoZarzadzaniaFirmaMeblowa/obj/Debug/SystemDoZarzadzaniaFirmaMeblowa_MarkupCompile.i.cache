@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\App.xaml
-5871054383
+61557021166
 2-747231112
-292112562462
+30-1333702132
 18412031647
-Dictionaries\EmployeeDictonary.xaml;Dictionaries\LoginPageDictionary.xaml;Dictionaries\MainPageDictionary.xaml;MainWindow.xaml;Views\AddEmployeeWindow.xaml;
+Dictionaries\AddEmployeeWindowDictionary.xaml;Dictionaries\EmployeeDictonary.xaml;Dictionaries\LoginPageDictionary.xaml;Dictionaries\MainPageDictionary.xaml;MainWindow.xaml;Views\AddEmployeeWindow.xaml;
 
 True
 

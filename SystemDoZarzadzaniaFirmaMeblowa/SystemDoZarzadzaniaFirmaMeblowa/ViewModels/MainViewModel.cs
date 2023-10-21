@@ -11,7 +11,7 @@ using SystemDoZarzadzaniaFirmaMeblowa.Commands.LoginPageCommands;
 
 namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 {
-    public class MainViewModel:BaseViewModel
+    public class MainViewModel : BaseViewModel
     {
         #region Komendy
         //pracownict
@@ -22,6 +22,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         public ChangeTabCommand changeTabCommand { get; }
         public LoginCommand loginCommand { get; }
         public ExitCommand exitCommand { get; }
+        public OpenAddEmployeeCommand openEmployeeWidnowCommand { get; }
 
         #endregion
 
@@ -143,6 +144,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             changeTabCommand = new ChangeTabCommand(this);
             loginCommand = new LoginCommand(this);
             exitCommand = new ExitCommand(this);
+            openEmployeeWidnowCommand = new OpenAddEmployeeCommand(this);
         }
     }
 }

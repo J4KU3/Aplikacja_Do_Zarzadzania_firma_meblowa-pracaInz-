@@ -4,9 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SystemDoZarzadzaniaFirmaMeblowa.Views"
+        xmlns:Vm ="clr-namespace:SystemDoZarzadzaniaFirmaMeblowa.ViewModels"
         mc:Ignorable="d"
-        Title="AddEmployeeWindow" Height="488.016" Width="313.752">
-    <Grid>
+        Title="AddEmployeeWindow" Height="566.016" Width="313.752">
+    <Window.DataContext>
+        <Vm:AddEmployeeWindowViewModel/>
+    </Window.DataContext>
+    <Grid Background="#FFBFBCBC">
+        <!--TextBoxy-->
+        <TextBox HorizontalAlignment="Left" Height="45" Margin="29,41,0,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.employeeID}" VerticalAlignment="Top" Width="145"/>
+        <TextBox HorizontalAlignment="Left" Height="45" Margin="29,112,0,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.EFirstName}" VerticalAlignment="Top" Width="145"/>
+        <TextBox HorizontalAlignment="Left" Height="45" Margin="29,188,0,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.ELastName}" VerticalAlignment="Top" Width="145"/>
+        <TextBox HorizontalAlignment="Left" Height="45" Margin="29,269,0,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Phone}" VerticalAlignment="Top" Width="145"/>
+        <TextBox HorizontalAlignment="Left" Height="45" Margin="29,350,0,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Mail}" VerticalAlignment="Top" Width="145"/>
+        <TextBox HorizontalAlignment="Left" Height="45" Margin="29,431,0,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Passsword}" VerticalAlignment="Top" Width="145"/>
+
+        <!--Label-->
+        <Label Content="ID Pracownika" HorizontalAlignment="Left" Margin="29,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Imię" HorizontalAlignment="Left" Margin="29,86,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="29,162,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefon" HorizontalAlignment="Left" Margin="29,238,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mail" HorizontalAlignment="Left" Margin="29,319,0,0" VerticalAlignment="Top"/>
+        <Label Content="Hasło" HorizontalAlignment="Left" Margin="29,400,0,0" VerticalAlignment="Top"/>
+
+        <!--checkbox-->
+        <CheckBox Content="Funkcje Administratora " HorizontalAlignment="Left" Margin="28,0,0,21.667" VerticalAlignment="Bottom" IsChecked="{Binding IsAdmin}"/>
+        <Button Content="Button" HorizontalAlignment="Right" Margin="0,0,10.333,9.667" VerticalAlignment="Bottom" Width="75" Height="47"/>
+
+        <!--Przyciski-->
+
 
     </Grid>
 </Window>
