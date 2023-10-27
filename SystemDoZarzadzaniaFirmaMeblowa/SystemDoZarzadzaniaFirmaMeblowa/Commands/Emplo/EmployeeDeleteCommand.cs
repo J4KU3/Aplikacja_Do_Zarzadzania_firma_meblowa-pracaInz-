@@ -21,7 +21,14 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Emplo
 
         public override bool CanExecute(object parameter)
         {
-            return base.CanExecute(parameter);
+            if (_mainViewModel.SelectedEmployee != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public override void Execute(object parameter)
         {

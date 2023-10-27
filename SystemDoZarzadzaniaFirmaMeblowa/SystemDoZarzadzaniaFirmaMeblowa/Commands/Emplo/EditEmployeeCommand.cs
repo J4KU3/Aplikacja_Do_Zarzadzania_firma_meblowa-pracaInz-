@@ -20,7 +20,14 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Emplo
 
         public override bool CanExecute(object parameter)
         {
-            return base.CanExecute(parameter);
+            if (_mainViewModel.SelectedEmployee !=null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override void Execute(object parameter)
@@ -35,7 +42,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Emplo
                     EmployeeToEdit.ELastName = _mainViewModel.SelectedEmployee.ELastName;
                     EmployeeToEdit.Phone = _mainViewModel.SelectedEmployee.Phone;
                     EmployeeToEdit.Mail = _mainViewModel.SelectedEmployee.Mail;
-                    EmployeeToEdit.Passsword = _mainViewModel.SelectedEmployee.Passsword;
+                    EmployeeToEdit.Password = _mainViewModel.SelectedEmployee.Password;
                     EmployeeToEdit.IsAdmin = _mainViewModel.SelectedEmployee.IsAdmin;
                 }
 

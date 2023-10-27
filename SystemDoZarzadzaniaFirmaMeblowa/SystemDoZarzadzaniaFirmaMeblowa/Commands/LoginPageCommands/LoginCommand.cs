@@ -27,14 +27,14 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.LoginPageCommands
 
         public override void Execute(object parameter)
         {
-            if (_mainviewmodel.ModelEmployee.Mail != null && _mainviewmodel.ModelEmployee.Passsword !=null)
+            if (_mainviewmodel.ModelEmployee.Mail != null && _mainviewmodel.ModelEmployee.Password !=null)
             {
 
                 using (var Employees = new ZarzadzanieFirmaDBEntities())
                 {
                     var employeMail = _mainviewmodel.ModelEmployee.Mail;
-                    var employePass = _mainviewmodel.ModelEmployee.Passsword;
-                  var found =  _mainviewmodel.ListOfEmployee.FirstOrDefault(x=>x.Mail == employeMail && x.Passsword== employePass );
+                    var employePass = _mainviewmodel.ModelEmployee.Password;
+                    var found =  _mainviewmodel.ListOfEmployee.FirstOrDefault(x=>x.Mail == employeMail && x.Password== employePass );
                     if (found!=null)
                     {
                         _mainviewmodel.SelectedPage = 1;

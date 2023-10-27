@@ -4,21 +4,21 @@
     <Key>
       <PropertyRef Name="ClientID" />
     </Key>
-    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="CLName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Zipcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="ApartmentNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ApartmentNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Clients" FromRole="Clients" ToRole="Orders" />
   </EntityType>
   <EntityType Name="Complaints">
     <Key>
-      <PropertyRef Name="IDComplaint" />
+      <PropertyRef Name="IdComplaint" />
     </Key>
-    <Property Name="IDComplaint" Type="Int32" Nullable="false" />
+    <Property Name="IdComplaint" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OrderID" Type="Int32" Nullable="false" />
     <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_Complaints_Orders" FromRole="Complaints" ToRole="Orders" />
@@ -27,12 +27,12 @@
     <Key>
       <PropertyRef Name="employeeID" />
     </Key>
-    <Property Name="employeeID" Type="Int32" Nullable="false" />
+    <Property Name="employeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="EFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ELastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Passsword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="IsAdmin" Type="Boolean" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Employees" FromRole="Employees" ToRole="Orders" />
   </EntityType>
@@ -40,7 +40,7 @@
     <Key>
       <PropertyRef Name="OrderID" />
     </Key>
-    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ClientID" Type="Int32" Nullable="false" />
     <Property Name="employeeID" Type="Int32" Nullable="false" />
     <Property Name="OrderDate" Type="DateTime" Precision="0" />

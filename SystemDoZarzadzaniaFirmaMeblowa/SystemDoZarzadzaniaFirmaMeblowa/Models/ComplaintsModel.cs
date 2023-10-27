@@ -11,7 +11,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Models
     {
         public ComplaintsModel(Complaints complaintsToCopy)
         {
-            IDComplaint = complaintsToCopy.IDComplaint;
+            IdComplaint = complaintsToCopy.IdComplaint;
             OrderID = complaintsToCopy.OrderID;
             Reason = complaintsToCopy.Reason;
         }

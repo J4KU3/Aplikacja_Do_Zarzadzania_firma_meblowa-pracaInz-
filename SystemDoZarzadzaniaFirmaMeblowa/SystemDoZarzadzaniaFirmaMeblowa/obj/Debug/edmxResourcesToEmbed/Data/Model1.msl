@@ -18,7 +18,7 @@
     <EntitySetMapping Name="Complaints">
       <EntityTypeMapping TypeName="ZarzadzanieFirmaDBModel.Complaints">
         <MappingFragment StoreEntitySet="Complaints">
-          <ScalarProperty Name="IDComplaint" ColumnName="IDComplaint" />
+          <ScalarProperty Name="IdComplaint" ColumnName="IdComplaint" />
           <ScalarProperty Name="OrderID" ColumnName="OrderID" />
           <ScalarProperty Name="Reason" ColumnName="Reason" />
         </MappingFragment>
@@ -32,7 +32,7 @@
           <ScalarProperty Name="ELastName" ColumnName="ELastName" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Mail" ColumnName="Mail" />
-          <ScalarProperty Name="Passsword" ColumnName="Passsword" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
         </MappingFragment>
       </EntityTypeMapping>

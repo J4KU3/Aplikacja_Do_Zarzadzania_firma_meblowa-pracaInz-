@@ -4,20 +4,20 @@
     <Key>
       <PropertyRef Name="ClientID" />
     </Key>
-    <Property Name="ClientID" Type="int" Nullable="false" />
+    <Property Name="ClientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CFName" Type="varchar" MaxLength="50" />
     <Property Name="CLName" Type="varchar" MaxLength="50" />
     <Property Name="Phone" Type="varchar" MaxLength="50" />
     <Property Name="Zipcode" Type="varchar" MaxLength="50" />
     <Property Name="City" Type="varchar" MaxLength="50" />
     <Property Name="Street" Type="varchar" MaxLength="50" />
-    <Property Name="ApartmentNumber" Type="nchar" MaxLength="50" />
+    <Property Name="ApartmentNumber" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Complaints">
     <Key>
-      <PropertyRef Name="IDComplaint" />
+      <PropertyRef Name="IdComplaint" />
     </Key>
-    <Property Name="IDComplaint" Type="int" Nullable="false" />
+    <Property Name="IdComplaint" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderID" Type="int" Nullable="false" />
     <Property Name="Reason" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -25,19 +25,19 @@
     <Key>
       <PropertyRef Name="employeeID" />
     </Key>
-    <Property Name="employeeID" Type="int" Nullable="false" />
+    <Property Name="employeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="EFirstName" Type="varchar" MaxLength="50" />
     <Property Name="ELastName" Type="varchar" MaxLength="50" />
     <Property Name="Phone" Type="varchar" MaxLength="50" />
     <Property Name="Mail" Type="varchar" MaxLength="50" />
-    <Property Name="Passsword" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
     <Property Name="IsAdmin" Type="bit" />
   </EntityType>
   <EntityType Name="Orders">
     <Key>
       <PropertyRef Name="OrderID" />
     </Key>
-    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ClientID" Type="int" Nullable="false" />
     <Property Name="employeeID" Type="int" Nullable="false" />
     <Property Name="OrderDate" Type="date" />

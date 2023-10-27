@@ -16,7 +16,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Models
             ELastName = employeesToCopy.ELastName;
             Phone = employeesToCopy.Phone;
             Mail = employeesToCopy.Mail;
-            Passsword = employeesToCopy.Passsword;
+            Password = employeesToCopy.Password;
             IsAdmin = employeesToCopy.IsAdmin;
         }
     }
