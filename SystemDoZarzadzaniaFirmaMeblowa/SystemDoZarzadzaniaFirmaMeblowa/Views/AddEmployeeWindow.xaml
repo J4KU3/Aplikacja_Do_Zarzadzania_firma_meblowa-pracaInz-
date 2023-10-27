@@ -12,11 +12,11 @@
     </Window.DataContext>
     <Grid Background="#FFBFBCBC">
         <!--TextBoxy-->
-        <TextBox HorizontalAlignment="Left" Height="45" Margin="35,61,0,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.EFirstName}" VerticalAlignment="Top" Width="145"/>
-        <TextBox HorizontalAlignment="Left" Height="45" Margin="35,137,0,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.ELastName}" VerticalAlignment="Top" Width="145"/>
-        <TextBox HorizontalAlignment="Left" Height="45" Margin="35,219,0,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Phone}" VerticalAlignment="Top" Width="145"/>
-        <TextBox HorizontalAlignment="Left" Height="45" Margin="35,299,0,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Mail}" VerticalAlignment="Top" Width="145"/>
-        <TextBox HorizontalAlignment="Left" Height="45" Margin="35,380,0,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Password}" VerticalAlignment="Top" Width="145"/>
+        <TextBox Height="45" Margin="35,61,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.EFirstName}" VerticalAlignment="Top"/>
+        <TextBox Height="45" Margin="35,137,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.ELastName}" VerticalAlignment="Top"/>
+        <TextBox Height="45" Margin="35,219,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Phone}" VerticalAlignment="Top"/>
+        <TextBox Height="45" Margin="35,299,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Mail}" VerticalAlignment="Top"/>
+        <TextBox Height="45" Margin="35,380,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Password}" VerticalAlignment="Top"/>
 
         <!--Label-->
         <Label Content="Imię" HorizontalAlignment="Left" Margin="34,35,0,0" VerticalAlignment="Top"/>
@@ -27,7 +27,7 @@
 
         <!--checkbox-->
         <CheckBox Content="Funkcje Administratora " HorizontalAlignment="Left" Margin="33,0,0,72.667" VerticalAlignment="Bottom" IsChecked="{Binding IsAdmin}"/>
-        <Button Content="Button" Margin="10,0,10.333,9.667" VerticalAlignment="Bottom" Height="47" Command="{Binding addEmployeeCommand}"/>
+        <Button Style="{StaticResource SaveDataButtonStyle}" Content="Dodaj" Margin="10,0,10.333,9.667" VerticalAlignment="Bottom" Height="47" Command="{Binding addEmployeeCommand}"/>
 
         <!--Przyciski-->
 

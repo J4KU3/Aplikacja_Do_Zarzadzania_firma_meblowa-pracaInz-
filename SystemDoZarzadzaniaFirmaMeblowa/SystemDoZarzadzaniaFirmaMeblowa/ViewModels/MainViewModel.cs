@@ -131,7 +131,12 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             set { _selectedEmployee = value; employeeDeleteCommand.OnCanExecuteChanged() ;editEmployeeCommand.OnCanExecuteChanged() ; OnPropertyChanged(); }
         }
 
-
+        private bool _IsAdmin;
+        public bool ISAdmin
+        {
+            get { return _IsAdmin; }
+            set { _IsAdmin = value; OnPropertyChanged(); }
+        }
         #endregion
 
         public MainViewModel()
