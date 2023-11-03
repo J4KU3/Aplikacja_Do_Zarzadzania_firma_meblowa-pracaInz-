@@ -8,6 +8,7 @@ using SystemDoZarzadzaniaFirmaMeblowa.Models;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.Emplo;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.LoginPageCommands;
+using SystemDoZarzadzaniaFirmaMeblowa.Commands.Orders;
 
 namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 {
@@ -18,6 +19,9 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         public LoadEmployeesCommand loadEmployeesCommand { get; }
         public EmployeeDeleteCommand employeeDeleteCommand { get; }
         public EditEmployeeCommand editEmployeeCommand { get; }
+        //
+        // Zamowienia
+        public LoadOrdersCommand loadOrdersCommand { get; }
         //
         public ChangeTabCommand changeTabCommand { get; }
         public LoginCommand loginCommand { get; }
@@ -67,6 +71,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             set
             {
                 _listOfOrders = value;
+                loadOrdersCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -88,7 +93,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         #endregion
 
         #region Zmienne
-
+        //Pracownicy
         private EmployeeModel _employee;
 
         public EmployeeModel ModelEmployee
@@ -104,8 +109,50 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
                 OnPropertyChanged();
             }
         }
+        private EmployeeModel _selectedEmployee;
 
+        public EmployeeModel SelectedEmployee
+        {
+            get { return _selectedEmployee; }
+            set { _selectedEmployee = value; employeeDeleteCommand.OnCanExecuteChanged(); editEmployeeCommand.OnCanExecuteChanged(); OnPropertyChanged(); }
+        }
 
+        private bool _IsAdmin;
+        public bool ISAdmin
+        {
+            get { return _IsAdmin; }
+            set { _IsAdmin = value; OnPropertyChanged(); }
+        }
+
+        //Zamowienia
+        private OrdersModel _selectedOrder;
+        public OrdersModel SelectedOrder
+        {
+            get
+            {
+                return _selectedOrder;
+            }
+            set
+            {
+                _selectedOrder = value;
+                OnPropertyChanged();
+            }
+        }
+        private bool _isProject;
+        public bool IsProjct
+        {
+            get
+            {
+                return _isProject;
+            }
+            set
+            {
+                _isProject = value;
+                OnPropertyChanged();
+            }
+        }
+
+        //głowne zmienne 
         private int _selectedPage;
 
         public int SelectedPage
@@ -123,20 +170,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             }
         }
 
-        private EmployeeModel _selectedEmployee;
-
-        public EmployeeModel SelectedEmployee
-        {
-            get { return _selectedEmployee; }
-            set { _selectedEmployee = value; employeeDeleteCommand.OnCanExecuteChanged() ;editEmployeeCommand.OnCanExecuteChanged() ; OnPropertyChanged(); }
-        }
-
-        private bool _IsAdmin;
-        public bool ISAdmin
-        {
-            get { return _IsAdmin; }
-            set { _IsAdmin = value; OnPropertyChanged(); }
-        }
+       
         #endregion
 
         public MainViewModel()
@@ -150,6 +184,8 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             loginCommand = new LoginCommand(this);
             exitCommand = new ExitCommand(this);
             openEmployeeWidnowCommand = new OpenAddEmployeeCommand(this);
+            loadOrdersCommand = new LoadOrdersCommand(this);
+            loadOrdersCommand.Execute(0);
         }
     }
 }

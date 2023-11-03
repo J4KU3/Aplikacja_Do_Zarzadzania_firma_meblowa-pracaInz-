@@ -77,6 +77,7 @@
     <Compile Include="Commands\Navigation\ChangeTabCommand.cs" />
     <Compile Include="Commands\Navigation\ExitCommand.cs" />
     <Compile Include="Commands\Navigation\OpenAddEmployeeCommand.cs" />
+    <Compile Include="Commands\Orders\LoadOrdersCommand.cs" />
     <Compile Include="Commands\Raports\CreateRaportsCommand.cs" />
     <Compile Include="Data\Clients.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -118,10 +119,6 @@
     <Compile Include="Views\AddEmployeeWindow.xaml.cs">
       <DependentUpon>AddEmployeeWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Dictionaries\AddEmployeeWindowDictionary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Dictionaries\EmployeeDictonary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dictionaries\MainPageDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionaries\OrdesDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

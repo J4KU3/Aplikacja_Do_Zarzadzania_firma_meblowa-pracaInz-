@@ -9,6 +9,8 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Models
 {
     public class OrdersModel:Orders
     {
+        public string EmployeeFName { get; set; }
+        public string ClientFName { get; set; }
         public OrdersModel(Orders ordesToCopy)
         {
             OrderID = ordesToCopy.OrderID;
@@ -19,6 +21,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Models
             ItemColor = ordesToCopy.ItemColor;
             Project = ordesToCopy.Project;
             Price = ordesToCopy.Price;
+          
 
         }
     }

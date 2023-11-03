@@ -20,7 +20,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation
 
         public override bool CanExecute(object parameter)
         {
-            if (_mainviewmodel.SelectedPage==2)
+            if (_mainviewmodel.SelectedPage==2 || _mainviewmodel.SelectedPage==3)
             {
                 if (!CheckAdmin())
                 {
