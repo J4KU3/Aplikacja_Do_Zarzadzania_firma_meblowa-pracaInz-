@@ -22,14 +22,18 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         //
         // Zamowienia
         public LoadOrdersCommand loadOrdersCommand { get; }
+        public DeleteOrderCommand deleteOrderCommand { get; }
+        public EditOrderCommand editOrderCommand { get; }
+
         //
+        //Główne komendy
         public ChangeTabCommand changeTabCommand { get; }
         public LoginCommand loginCommand { get; }
         public ExitCommand exitCommand { get; }
         public OpenAddEmployeeCommand openEmployeeWidnowCommand { get; }
-
+        //
         #endregion
-
+        //Listy
         #region Listy
         private ObservableCollection<EmployeeModel> _listOfEmployee = new ObservableCollection<EmployeeModel>();
 
@@ -91,9 +95,11 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             }
         }
         #endregion
-
+        //Zmienne 
         #region Zmienne
         //Pracownicy
+        #region pracownicy
+
         private EmployeeModel _employee;
 
         public EmployeeModel ModelEmployee
@@ -123,8 +129,22 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             get { return _IsAdmin; }
             set { _IsAdmin = value; OnPropertyChanged(); }
         }
-
+        #endregion
         //Zamowienia
+        #region Zamówienia
+        private OrdersModel _order;
+        public OrdersModel ModelOrder
+        {
+            get
+            {
+                return _order;
+            }
+            set
+            {
+                _order = value;
+                OnPropertyChanged();
+            }
+        }
         private OrdersModel _selectedOrder;
         public OrdersModel SelectedOrder
         {
@@ -135,6 +155,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             set
             {
                 _selectedOrder = value;
+                deleteOrderCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -152,7 +173,10 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             }
         }
 
+        #endregion
         //głowne zmienne 
+        #region główne zmeinne 
+
         private int _selectedPage;
 
         public int SelectedPage
@@ -169,23 +193,29 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
                 OnPropertyChanged();
             }
         }
+        #endregion
 
-       
         #endregion
 
         public MainViewModel()
         {
+            //pracownicy
             _employee = new EmployeeModel(new Data.Employees());
             loadEmployeesCommand = new LoadEmployeesCommand(this);
             loadEmployeesCommand.Execute(0);
             employeeDeleteCommand = new EmployeeDeleteCommand(this);
             editEmployeeCommand = new EditEmployeeCommand(this);
+            //głowne komendy 
             changeTabCommand = new ChangeTabCommand(this);
             loginCommand = new LoginCommand(this);
             exitCommand = new ExitCommand(this);
             openEmployeeWidnowCommand = new OpenAddEmployeeCommand(this);
+            //Zamówienia
+            _order = new OrdersModel(new Data.Orders());
             loadOrdersCommand = new LoadOrdersCommand(this);
             loadOrdersCommand.Execute(0);
+            deleteOrderCommand = new DeleteOrderCommand(this);
+            editOrderCommand = new EditOrderCommand(this);
         }
     }
 }

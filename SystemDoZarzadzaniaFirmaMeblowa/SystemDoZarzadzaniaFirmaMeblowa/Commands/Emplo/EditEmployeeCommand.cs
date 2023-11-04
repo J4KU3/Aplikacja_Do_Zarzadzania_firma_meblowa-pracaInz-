@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.BaseCommand;
 using SystemDoZarzadzaniaFirmaMeblowa.ViewModels;
 using SystemDoZarzadzaniaFirmaMeblowa.Data;
+using System.Windows;
 
 namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Emplo
 {
@@ -32,21 +33,33 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Emplo
 
         public override void Execute(object parameter)
         {
-            using (var resource = new ZarzadzanieFirmaDBEntities())
+            try
             {
-                var EmployeeToEdit = resource.Employees.FirstOrDefault(x=>x.employeeID == _mainViewModel.SelectedEmployee.employeeID);
-
-                if (EmployeeToEdit != null)
+                using (var resource = new ZarzadzanieFirmaDBEntities())
                 {
-                    EmployeeToEdit.EFirstName = _mainViewModel.SelectedEmployee.EFirstName;
-                    EmployeeToEdit.ELastName = _mainViewModel.SelectedEmployee.ELastName;
-                    EmployeeToEdit.Phone = _mainViewModel.SelectedEmployee.Phone;
-                    EmployeeToEdit.Mail = _mainViewModel.SelectedEmployee.Mail;
-                    EmployeeToEdit.Password = _mainViewModel.SelectedEmployee.Password;
-                    EmployeeToEdit.IsAdmin = _mainViewModel.SelectedEmployee.IsAdmin;
+                    var EmployeeToEdit = resource.Employees.FirstOrDefault(x => x.employeeID == _mainViewModel.SelectedEmployee.employeeID);
+                    var selectedEmp = _mainViewModel.SelectedEmployee;
+                    if (EmployeeToEdit != null)
+                    {
+                        EmployeeToEdit.EFirstName = selectedEmp.EFirstName;
+                        EmployeeToEdit.ELastName = selectedEmp.ELastName;
+                        EmployeeToEdit.Phone = selectedEmp.Phone;
+                        EmployeeToEdit.Mail = selectedEmp.Mail;
+                        EmployeeToEdit.Password = selectedEmp.Password;
+                        EmployeeToEdit.IsAdmin = selectedEmp.IsAdmin;
+                        resource.SaveChanges();
+                        MessageBox.Show($"Pracownik o id:{EmployeeToEdit.employeeID} został edytowany ");
+                    }
+
                 }
 
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Żaden pracownik z listy nie został wybrany");
+            }
+           
         }
 
     }
