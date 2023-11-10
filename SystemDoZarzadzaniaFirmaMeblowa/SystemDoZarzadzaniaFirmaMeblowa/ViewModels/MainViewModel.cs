@@ -24,6 +24,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         public LoadOrdersCommand loadOrdersCommand { get; }
         public DeleteOrderCommand deleteOrderCommand { get; }
         public EditOrderCommand editOrderCommand { get; }
+        public SearchOrderCommand searchOrderCommand { get; }
 
         //
         //Główne komendy
@@ -76,6 +77,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             {
                 _listOfOrders = value;
                 loadOrdersCommand.OnCanExecuteChanged();
+                
                 OnPropertyChanged();
             }
         }
@@ -216,6 +218,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             loadOrdersCommand.Execute(0);
             deleteOrderCommand = new DeleteOrderCommand(this);
             editOrderCommand = new EditOrderCommand(this);
+            searchOrderCommand = new SearchOrderCommand(this);
         }
     }
 }
