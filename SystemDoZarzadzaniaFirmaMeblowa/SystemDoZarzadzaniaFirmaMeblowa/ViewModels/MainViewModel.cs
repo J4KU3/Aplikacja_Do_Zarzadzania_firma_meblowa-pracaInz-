@@ -9,6 +9,7 @@ using SystemDoZarzadzaniaFirmaMeblowa.Commands.Emplo;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.LoginPageCommands;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.Orders;
+using SystemDoZarzadzaniaFirmaMeblowa.Commands.ClientsFolder;
 
 namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 {
@@ -26,6 +27,9 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         public EditOrderCommand editOrderCommand { get; }
         public SearchOrderCommand searchOrderCommand { get; }
 
+        //
+        //klienci
+        public LoadClientsCommand loadClientsCommand { get; }
         //
         //Główne komendy
         public ChangeTabCommand changeTabCommand { get; }
@@ -62,6 +66,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             set
             {
                 _listOfClients = value;
+                loadClientsCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -219,6 +224,9 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             deleteOrderCommand = new DeleteOrderCommand(this);
             editOrderCommand = new EditOrderCommand(this);
             searchOrderCommand = new SearchOrderCommand(this);
+            //Klienci
+            loadClientsCommand = new LoadClientsCommand(this);
+            loadClientsCommand.Execute(0);
         }
     }
 }

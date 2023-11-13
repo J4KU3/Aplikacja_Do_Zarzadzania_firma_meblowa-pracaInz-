@@ -73,6 +73,7 @@
     <Compile Include="Commands\Emplo\EditEmployeeCommand.cs" />
     <Compile Include="Commands\Emplo\EmployeeDeleteCommand.cs" />
     <Compile Include="Commands\Emplo\LoadEmployeesCommand.cs" />
+    <Compile Include="Commands\ClientsFolder\LoadClientsCommand.cs" />
     <Compile Include="Commands\LoginPageCommands\LoginCommand.cs" />
     <Compile Include="Commands\Navigation\ChangeTabCommand.cs" />
     <Compile Include="Commands\Navigation\ExitCommand.cs" />
@@ -122,6 +123,10 @@
     <Compile Include="Views\AddEmployeeWindow.xaml.cs">
       <DependentUpon>AddEmployeeWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Dictionaries\ClientsPageDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dictionaries\EmployeeDictonary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
