@@ -68,6 +68,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\BaseCommand\CommandBase.cs" />
+    <Compile Include="Commands\ClientsFolder\EditClientsCommand.cs" />
     <Compile Include="Commands\Emplo\AddEmployeeViewCommand\AddEmployeeCommand.cs" />
     <Compile Include="Commands\Emplo\AddEmployeeViewCommand\CloseWindowCommand.cs" />
     <Compile Include="Commands\Emplo\EditEmployeeCommand.cs" />
@@ -123,10 +124,6 @@
     <Compile Include="Views\AddEmployeeWindow.xaml.cs">
       <DependentUpon>AddEmployeeWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Dictionaries\ClientsPageDictionary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Dictionaries\EmployeeDictonary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
