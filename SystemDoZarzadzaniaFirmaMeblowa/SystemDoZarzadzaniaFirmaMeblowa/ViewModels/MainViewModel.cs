@@ -31,12 +31,14 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         //klienci
         public LoadClientsCommand loadClientsCommand { get; }
         public EditClientsCommand editClientsCommand { get; }
+        public DeleteClientsCommand deleteClientsCommand { get; }
         //
         //Główne komendy
         public ChangeTabCommand changeTabCommand { get; }
         public LoginCommand loginCommand { get; }
         public ExitCommand exitCommand { get; }
         public OpenAddEmployeeCommand openEmployeeWidnowCommand { get; }
+        public OpenClientsAddWindowCommand openClientsWindow { get; }
         //
         #endregion
         //Listy
@@ -196,6 +198,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             {
                 _selectedClient = value;
                 editClientsCommand.OnCanExecuteChanged();
+                deleteClientsCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -236,6 +239,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             loginCommand = new LoginCommand(this);
             exitCommand = new ExitCommand(this);
             openEmployeeWidnowCommand = new OpenAddEmployeeCommand(this);
+            openClientsWindow = new OpenClientsAddWindowCommand(this);
             //Zamówienia
             _order = new OrdersModel(new Data.Orders());
             loadOrdersCommand = new LoadOrdersCommand(this);
@@ -247,6 +251,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             loadClientsCommand = new LoadClientsCommand(this);
             loadClientsCommand.Execute(0);
             editClientsCommand = new EditClientsCommand(this);
+            deleteClientsCommand = new DeleteClientsCommand(this);
         }
     }
 }

@@ -68,6 +68,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\BaseCommand\CommandBase.cs" />
+    <Compile Include="Commands\ClientsFolder\DeleteClientsCommand.cs" />
     <Compile Include="Commands\ClientsFolder\EditClientsCommand.cs" />
     <Compile Include="Commands\Emplo\AddEmployeeViewCommand\AddEmployeeCommand.cs" />
     <Compile Include="Commands\Emplo\AddEmployeeViewCommand\CloseWindowCommand.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Commands\Navigation\ChangeTabCommand.cs" />
     <Compile Include="Commands\Navigation\ExitCommand.cs" />
     <Compile Include="Commands\Navigation\OpenAddEmployeeCommand.cs" />
+    <Compile Include="Commands\Navigation\OpenClientsAddWindowCommand.cs" />
     <Compile Include="Commands\Orders\DeleteOrderCommand.cs" />
     <Compile Include="Commands\Orders\EditOrderCommand.cs" />
     <Compile Include="Commands\Orders\LoadOrdersCommand.cs" />
@@ -121,9 +123,16 @@
     <Compile Include="ViewModels\AddEmployeeWindowViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\AddClientView.xaml.cs">
+      <DependentUpon>AddClientView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddEmployeeWindow.xaml.cs">
       <DependentUpon>AddEmployeeWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Dictionaries\ClientsDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dictionaries\EmployeeDictonary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -152,6 +161,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AddClientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -209,6 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\ClientsFolder\AddClientsViewCommands\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

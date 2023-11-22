@@ -210,8 +210,8 @@
 
                         </Grid>
                         <Grid Grid.Column="1">
-                            <Button Style="{StaticResource AddButtonStyle}" Content="Dodaj Klienta" Margin="10,10,10,0" VerticalAlignment="Top" Height="46" Command=""/>
-                            <Button Style="{StaticResource DeleteButtonStyle}" Content="Usuń Klienta" Margin="10,61,10,0" VerticalAlignment="Top" Height="46" Command=""/>
+                            <Button Style="{StaticResource AddButtonStyle}" Content="Dodaj Klienta" Margin="10,10,10,0" VerticalAlignment="Top" Height="46" Command="{Binding openClientsWindow}"/>
+                            <Button Style="{StaticResource DeleteButtonStyle}" Content="Usuń Klienta" Margin="10,61,10,0" VerticalAlignment="Top" Height="46" Command="{Binding deleteClientsCommand}"/>
                             <Button Style="{StaticResource EditButtonStyle}" Content="Edytuj Dane" Margin="10,112,10,0" VerticalAlignment="Top" Height="46" Command="{Binding editClientsCommand}"/>
                             <Button Style="{StaticResource BackButtonStyle}" Content="Wstecz" Margin="10,0,10,9.333" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="3"/>
 
