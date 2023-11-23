@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="Dictionaries\MainPageDictionary.xaml"/>
                 <ResourceDictionary Source="Dictionaries\EmployeeDictonary.xaml"/>
                 <ResourceDictionary Source="Dictionaries\OrdesDictionary.xaml"/>
+                <ResourceDictionary Source="Dictionaries\ClientsDictionary.xaml"/> 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
