@@ -73,7 +73,7 @@
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
                             <Button Style="{StaticResource MainButtonStyle}" Grid.Row="0" Content="Dodaj &#xD;&#xA;Reklamacje" Margin="10,10,10,9.667"/>
-                            <Button Style="{StaticResource MainButtonStyle}" Content="Zarządzaj &#xD;&#xA;reklamacjami " Margin="10,10.333" Grid.Row="1"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Content="Zarządzaj &#xD;&#xA;reklamacjami " Margin="10,10.333" Grid.Row="1" Command="{Binding changeTabCommand}" CommandParameter="6"/>
 
                         </Grid>
 
@@ -214,6 +214,36 @@
                             <Button Style="{StaticResource DeleteButtonStyle}" Content="Usuń Klienta" Margin="10,61,10,0" VerticalAlignment="Top" Height="46" Command="{Binding deleteClientsCommand}"/>
                             <Button Style="{StaticResource EditButtonStyle}" Content="Edytuj Dane" Margin="10,112,10,0" VerticalAlignment="Top" Height="46" Command="{Binding editClientsCommand}"/>
                             <Button Style="{StaticResource BackButtonStyle}" Content="Wstecz" Margin="10,0,10,9.333" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="3"/>
+
+                        </Grid>
+                    </Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Reklamacje">
+                <Grid>
+                    <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="607*"/>
+                            <ColumnDefinition Width="180*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <DataGrid Margin="10,10,9.667,111.333" ItemsSource="{Binding ListOfComplaints}" SelectedItem="{Binding SelectedComplaints}" AutoGenerateColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID" Binding="{Binding IdComplaint}"/>
+                                    <DataGridTextColumn Header="Zamówienie nr" Binding="{Binding OrderID}"/>
+                                    <DataGridTextColumn Header="Powód" Binding="{Binding Reason}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Button Style="{StaticResource AddButtonStyle}" Content="Dodaj Reklamacje" Margin="10,10,10,0" VerticalAlignment="Top" Height="46" Command="{Binding openClientsWindow}"/>
+                            <Button Style="{StaticResource DeleteButtonStyle}" Content="Usuń Reklamacje" Margin="10,61,10,0" VerticalAlignment="Top" Height="46" Command="{Binding deleteComplaintsCommand}"/>
+                            <Button Style="{StaticResource EditButtonStyle}" Content="Edytuj" Margin="10,112,10,0" VerticalAlignment="Top" Height="46" Command="{Binding editClientsCommand}"/>
+                            <Button Style="{StaticResource BackButtonStyle}" Content="Wstecz" Margin="10,0,10,9.333" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="1"/>
 
                         </Grid>
                     </Grid>

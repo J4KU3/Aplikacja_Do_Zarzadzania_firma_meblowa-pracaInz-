@@ -10,6 +10,7 @@ using SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.LoginPageCommands;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.Orders;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.ClientsFolder;
+using SystemDoZarzadzaniaFirmaMeblowa.Commands.ComplaintsFolder;
 
 namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 {
@@ -32,6 +33,10 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         public LoadClientsCommand loadClientsCommand { get; }
         public EditClientsCommand editClientsCommand { get; }
         public DeleteClientsCommand deleteClientsCommand { get; }
+        //
+        //Reklamacje
+        public LoadComplaintsFromDataCommand loadComplaintsFromDataCommand { get; }
+        public DeleteComplaintsCommand deleteComplaintsCommand { get; }
         //
         //Główne komendy
         public ChangeTabCommand changeTabCommand { get; }
@@ -101,6 +106,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             set
             {
                 _listOfComplaints = value;
+                loadComplaintsFromDataCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -203,6 +209,34 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             }
         }
         #endregion
+        //Reklamacje
+        private ComplaintsModel _complaintsModel;
+        public ComplaintsModel ModelComplaints
+        {
+            get
+            {
+                return _complaintsModel;
+            }
+            set
+            {
+                _complaintsModel = value;
+                OnPropertyChanged();
+            }
+        }
+        private ComplaintsModel _selectedComplaint;
+        public ComplaintsModel SelectedComplaints
+        {
+            get
+            {
+                return _selectedComplaint;
+            }
+            set
+            {
+                _selectedComplaint = value;
+                deleteComplaintsCommand.OnCanExecuteChanged();
+                OnPropertyChanged();
+            }
+        }
         //głowne zmienne 
         #region główne zmeinne 
 
@@ -252,6 +286,10 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             loadClientsCommand.Execute(0);
             editClientsCommand = new EditClientsCommand(this);
             deleteClientsCommand = new DeleteClientsCommand(this);
+            //Reklamacje
+            loadComplaintsFromDataCommand = new LoadComplaintsFromDataCommand(this);
+            loadComplaintsFromDataCommand.Execute(0);
+            deleteComplaintsCommand = new DeleteComplaintsCommand(this);
         }
     }
 }

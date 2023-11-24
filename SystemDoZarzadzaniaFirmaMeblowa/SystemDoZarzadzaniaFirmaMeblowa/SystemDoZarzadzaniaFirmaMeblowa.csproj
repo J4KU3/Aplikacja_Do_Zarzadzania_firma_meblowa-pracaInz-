@@ -72,6 +72,9 @@
     <Compile Include="Commands\ClientsFolder\AddClientsViewCommands\CloseAddClientsWindow.cs" />
     <Compile Include="Commands\ClientsFolder\DeleteClientsCommand.cs" />
     <Compile Include="Commands\ClientsFolder\EditClientsCommand.cs" />
+    <Compile Include="Commands\ComplaintsFolder\DeleteComplaintsCommand.cs" />
+    <Compile Include="Commands\ComplaintsFolder\EditComplaintsCommand.cs" />
+    <Compile Include="Commands\ComplaintsFolder\LoadComplaintsFromDataCommand.cs" />
     <Compile Include="Commands\Emplo\AddEmployeeViewCommand\AddEmployeeCommand.cs" />
     <Compile Include="Commands\Emplo\AddEmployeeViewCommand\CloseWindowCommand.cs" />
     <Compile Include="Commands\Emplo\EditEmployeeCommand.cs" />
