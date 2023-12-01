@@ -20,7 +20,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation
 
         public override bool CanExecute(object parameter)
         {
-            if (_mainviewmodel.SelectedPage==2 || _mainviewmodel.SelectedPage==3)
+            if (_mainviewmodel.SelectedPage==2 || _mainviewmodel.SelectedPage==3 || _mainviewmodel.SelectedPage == 6)
             {
                 if (!CheckAdmin())
                 {
@@ -45,6 +45,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation
             _mainviewmodel.SelectedPage = int.Parse(parameter as string);
         }
 
+        //sprawdza czy pracownik ma funkcje admina 
         private bool CheckAdmin()
         {
             using (var context = new Data.ZarzadzanieFirmaDBEntities())

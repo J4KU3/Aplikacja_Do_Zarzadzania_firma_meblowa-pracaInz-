@@ -72,7 +72,7 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="0" Content="Dodaj &#xD;&#xA;Reklamacje" Margin="10,10,10,9.667"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="0" Content="Dodaj &#xD;&#xA;Reklamacje" Margin="10,10,10,9.667" Command="{Binding changeTabCommand}" CommandParameter="7"/>
                             <Button Style="{StaticResource MainButtonStyle}" Content="Zarządzaj &#xD;&#xA;reklamacjami " Margin="10,10.333" Grid.Row="1" Command="{Binding changeTabCommand}" CommandParameter="6"/>
 
                         </Grid>
@@ -220,7 +220,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Reklamacje">
+            <TabItem Header="ReklamacjeZRZ">
                 <Grid>
                     <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
                     <Grid>
@@ -240,7 +240,7 @@
 
                         </Grid>
                         <Grid Grid.Column="1">
-                            <Button Style="{StaticResource AddButtonStyle}" Content="Dodaj Reklamacje" Margin="10,10,10,0" VerticalAlignment="Top" Height="46" Command="{Binding openClientsWindow}"/>
+                            <Button Style="{StaticResource AddButtonStyle}" Content="Dodaj Reklamacje" Margin="10,10,10,0" VerticalAlignment="Top" Height="46" Command=""/>
                             <Button Style="{StaticResource DeleteButtonStyle}" Content="Usuń Reklamacje" Margin="10,61,10,0" VerticalAlignment="Top" Height="46" Command="{Binding deleteComplaintsCommand}"/>
                             <Button Style="{StaticResource EditButtonStyle}" Content="Edytuj" Margin="10,112,10,0" VerticalAlignment="Top" Height="46" Command="{Binding editClientsCommand}"/>
                             <Button Style="{StaticResource BackButtonStyle}" Content="Wstecz" Margin="10,0,10,9.333" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="1"/>
@@ -249,6 +249,48 @@
                     </Grid>
 
                 </Grid>
+            </TabItem>
+            <TabItem Header="Reklamacje">
+                <Grid  Margin="-11,-3,-2.333,-8.667">
+                    <Viewbox>
+                        <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33" Width="1275"/>
+                    </Viewbox>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="267*"/>
+                            <ColumnDefinition Width="349*"/>
+                            <ColumnDefinition Width="180*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="2">
+                            <Button Style="{StaticResource BackButtonStyle}" Content="Wstecz" Margin="10,0,10,9.333" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="1"/>
+                            <Button Content="Dodaj" Margin="10,0,9.667,60.333" Height="46" VerticalAlignment="Bottom" Command="" CommandParameter=""/>
+
+                        </Grid>
+                        <Grid Grid.Column="0">
+                            <RichTextBox Margin="0,0,-0.333,0.333">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="{Binding ModelComplaints.Reason }"/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Label Content="Wybierz zamówienie" FontWeight="Bold" FontSize="24"/>
+                            <ComboBox HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="237" ItemsSource="{Binding ListOfOrders}" DisplayMemberPath="OrderID" Height="25" />
+
+                        </Grid>
+
+                    </Grid>
+
+
+
+
+
+                </Grid>
+
             </TabItem>
         </TabControl>
 
