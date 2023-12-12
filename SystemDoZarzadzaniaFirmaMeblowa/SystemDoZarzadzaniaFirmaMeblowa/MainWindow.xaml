@@ -242,7 +242,7 @@
                         <Grid Grid.Column="1">
                             <Button Style="{StaticResource AddButtonStyle}" Content="Dodaj Reklamacje" Margin="10,10,10,0" VerticalAlignment="Top" Height="46" Command=""/>
                             <Button Style="{StaticResource DeleteButtonStyle}" Content="Usuń Reklamacje" Margin="10,61,10,0" VerticalAlignment="Top" Height="46" Command="{Binding deleteComplaintsCommand}"/>
-                            <Button Style="{StaticResource EditButtonStyle}" Content="Edytuj" Margin="10,112,10,0" VerticalAlignment="Top" Height="46" Command="{Binding editClientsCommand}"/>
+                            <Button Style="{StaticResource EditButtonStyle}" Content="Edytuj" Margin="10,112,10,0" VerticalAlignment="Top" Height="46" Command="{Binding editComplaintsCommand}"/>
                             <Button Style="{StaticResource BackButtonStyle}" Content="Wstecz" Margin="10,0,10,9.333" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="1"/>
 
                         </Grid>

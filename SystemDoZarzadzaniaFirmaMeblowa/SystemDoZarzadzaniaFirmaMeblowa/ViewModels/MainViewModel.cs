@@ -37,6 +37,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         //Reklamacje
         public LoadComplaintsFromDataCommand loadComplaintsFromDataCommand { get; }
         public DeleteComplaintsCommand deleteComplaintsCommand { get; }
+        public EditComplaintsCommand editComplaintsCommand { get; }
         public AddComplaints addComplaintsCommand { get; }
         //
         //Główne komendy
@@ -212,20 +213,6 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         #endregion
         //Reklamacje
 
-        private string _screenValue;
-        public string ScreenValue
-        {
-            get
-            {
-                return _screenValue;
-            }
-            set
-            {
-                _screenValue = value;
-                OnPropertyChanged();
-            }
-        }
-
         private OrdersModel _selectedComplaintsOrder;
         public OrdersModel SelectedComplaintsOrder
         {
@@ -268,6 +255,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
                 
                 deleteComplaintsCommand.OnCanExecuteChanged();
                 addComplaintsCommand.OnCanExecuteChanged();
+                editComplaintsCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -327,6 +315,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             loadComplaintsFromDataCommand.Execute(0);
             deleteComplaintsCommand = new DeleteComplaintsCommand(this);
             addComplaintsCommand = new AddComplaints(this);
+            editComplaintsCommand = new EditComplaintsCommand(this);
         }
     }
 }

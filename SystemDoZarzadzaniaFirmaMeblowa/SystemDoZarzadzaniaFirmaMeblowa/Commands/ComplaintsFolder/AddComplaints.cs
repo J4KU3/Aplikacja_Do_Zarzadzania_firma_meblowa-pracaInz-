@@ -30,8 +30,8 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.ComplaintsFolder
             {
                 using (var resource = new ZarzadzanieFirmaDBEntities())
                 {
-                    _mainviewmodel.ScreenValue = _mainviewmodel.SelectedComplaintsOrder.OrderID.ToString();
-                    MessageBox.Show($"{_mainviewmodel.ScreenValue}");
+                  
+                    
                     if (_mainviewmodel.ModelComplaints !=null && _mainviewmodel.SelectedComplaintsOrder != null)
                     {
                         var newcomplaints = new Complaints
