@@ -22,7 +22,14 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.ComplaintsFolder
         }
         public override bool CanExecute(object parameter)
         {
-            return _mainviewModel.SelectedComplaints != null;
+            if (_mainviewModel.SelectedComplaints != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public override void Execute(object parameter)
         {
@@ -38,7 +45,8 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.ComplaintsFolder
                         ComplaintToEdit.Reason = selectedComplaint.Reason;
   
                         resource.SaveChanges();
-                        MessageBox.Show($"Pracownik o id:{ComplaintToEdit.IdComplaint} został edytowany ");
+                        MessageBox.Show($"Reklamacja:{ComplaintToEdit.IdComplaint} został edytowana");
+                        _mainviewModel.loadComplaintsFromDataCommand.Execute(0);
                     }
 
 

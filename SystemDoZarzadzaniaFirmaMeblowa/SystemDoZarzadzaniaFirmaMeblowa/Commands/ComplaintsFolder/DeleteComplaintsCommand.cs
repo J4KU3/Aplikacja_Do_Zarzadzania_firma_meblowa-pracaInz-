@@ -22,7 +22,14 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.ComplaintsFolder
         }
         public override bool CanExecute(object parameter)
         {
-            return _mainViewModel.SelectedComplaints != null;
+            if (_mainViewModel.SelectedComplaints != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public override void Execute(object parameter)
         {
@@ -35,6 +42,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.ComplaintsFolder
                     {
                         resource.Complaints.Remove(ComplaintToDelete);
                         resource.SaveChanges();
+                        _mainViewModel.loadComplaintsFromDataCommand.Execute(0);
                     }
 
 

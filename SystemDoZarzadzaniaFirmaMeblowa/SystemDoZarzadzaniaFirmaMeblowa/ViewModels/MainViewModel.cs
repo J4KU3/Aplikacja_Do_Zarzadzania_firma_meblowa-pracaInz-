@@ -37,6 +37,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         //Reklamacje
         public LoadComplaintsFromDataCommand loadComplaintsFromDataCommand { get; }
         public DeleteComplaintsCommand deleteComplaintsCommand { get; }
+        public AddComplaints addComplaintsCommand { get; }
         //
         //Główne komendy
         public ChangeTabCommand changeTabCommand { get; }
@@ -210,6 +211,35 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         }
         #endregion
         //Reklamacje
+
+        private string _screenValue;
+        public string ScreenValue
+        {
+            get
+            {
+                return _screenValue;
+            }
+            set
+            {
+                _screenValue = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private OrdersModel _selectedComplaintsOrder;
+        public OrdersModel SelectedComplaintsOrder
+        {
+            get
+            {
+                return _selectedComplaintsOrder;
+            }
+            set
+            {
+                _selectedComplaintsOrder = value;
+              
+                OnPropertyChanged();
+            }
+        }
         private ComplaintsModel _complaintsModel;
         public ComplaintsModel ModelComplaints
         {
@@ -220,6 +250,8 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             set
             {
                 _complaintsModel = value;
+               
+                addComplaintsCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -233,7 +265,9 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             set
             {
                 _selectedComplaint = value;
+                
                 deleteComplaintsCommand.OnCanExecuteChanged();
+                addComplaintsCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -287,9 +321,12 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             editClientsCommand = new EditClientsCommand(this);
             deleteClientsCommand = new DeleteClientsCommand(this);
             //Reklamacje
+            _selectedComplaintsOrder = new OrdersModel(new Data.Orders());
+            _complaintsModel = new ComplaintsModel(new Data.Complaints());
             loadComplaintsFromDataCommand = new LoadComplaintsFromDataCommand(this);
             loadComplaintsFromDataCommand.Execute(0);
             deleteComplaintsCommand = new DeleteComplaintsCommand(this);
+            addComplaintsCommand = new AddComplaints(this);
         }
     }
 }

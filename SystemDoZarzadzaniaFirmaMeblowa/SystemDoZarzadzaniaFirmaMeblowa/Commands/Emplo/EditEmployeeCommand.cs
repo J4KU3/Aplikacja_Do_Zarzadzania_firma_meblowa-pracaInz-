@@ -21,8 +21,15 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Emplo
 
         public override bool CanExecute(object parameter)
         {
-            return _mainViewModel.SelectedEmployee != null;
-           
+            if (_mainViewModel.SelectedEmployee != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         public override void Execute(object parameter)
@@ -43,6 +50,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Emplo
                         EmployeeToEdit.IsAdmin = selectedEmp.IsAdmin;
                         resource.SaveChanges();
                         MessageBox.Show($"Pracownik o id:{EmployeeToEdit.employeeID} został edytowany ");
+                        _mainViewModel.loadEmployeesCommand.Execute(0);
                     }
 
                 }
