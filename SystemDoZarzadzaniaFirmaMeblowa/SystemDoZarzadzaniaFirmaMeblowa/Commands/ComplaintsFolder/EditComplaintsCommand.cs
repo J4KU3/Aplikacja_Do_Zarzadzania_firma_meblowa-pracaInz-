@@ -22,15 +22,8 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.ComplaintsFolder
         }
         public override bool CanExecute(object parameter)
         {
-
-            if (_mainviewModel.SelectedComplaints != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return _mainviewModel.SelectedComplaints != null;   
+            
         }
         public override void Execute(object parameter)
         {

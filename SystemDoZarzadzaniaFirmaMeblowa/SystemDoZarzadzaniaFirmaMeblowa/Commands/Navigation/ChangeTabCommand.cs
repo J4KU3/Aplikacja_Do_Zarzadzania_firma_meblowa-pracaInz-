@@ -42,7 +42,23 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation
 
         public override void Execute(object parameter)
         {
-            _mainviewmodel.SelectedPage = int.Parse(parameter as string);
+            string page = parameter as string;
+            if (page == "0")
+            {
+                _mainviewmodel.loadClientsCommand.Execute(0);
+                _mainviewmodel.loadEmployeesCommand.Execute(0);
+                
+                _mainviewmodel.ModelEmployee.Mail = null;
+                _mainviewmodel.ModelEmployee.Password = null;
+                _mainviewmodel.SelectedPage = int.Parse(page);
+            }
+            else
+            {
+                _mainviewmodel.SelectedPage = int.Parse(parameter as string);
+            }
+            
+
+
         }
 
         //sprawdza czy pracownik ma funkcje admina 

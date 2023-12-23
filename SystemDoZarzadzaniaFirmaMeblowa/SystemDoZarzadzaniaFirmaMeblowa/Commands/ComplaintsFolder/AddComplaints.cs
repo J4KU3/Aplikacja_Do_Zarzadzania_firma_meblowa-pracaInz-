@@ -32,7 +32,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.ComplaintsFolder
                 {
                   
                     
-                    if (_mainviewmodel.ModelComplaints !=null && _mainviewmodel.SelectedComplaintsOrder != null)
+                    if (_mainviewmodel.ModelComplaints.Reason !=null && _mainviewmodel.SelectedComplaintsOrder != null)
                     {
                         var newcomplaints = new Complaints
                         {
@@ -41,6 +41,10 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.ComplaintsFolder
                         };
                         resource.Complaints.Add(newcomplaints);
                         resource.SaveChanges();
+                        MessageBox.Show("Dodano nową reklamacje ");
+                        _mainviewmodel.SelectedComplaintsOrder = null;
+                        _mainviewmodel.ModelComplaints = null;
+                        _mainviewmodel.SelectedPage = 1;
 
                     }
                     else
