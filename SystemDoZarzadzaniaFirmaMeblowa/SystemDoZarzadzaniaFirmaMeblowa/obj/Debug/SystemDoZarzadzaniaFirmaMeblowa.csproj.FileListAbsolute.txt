@@ -31,3 +31,6 @@ C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarza
 C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\obj\Debug\Views\AddClientView.baml
 C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\obj\Debug\Dictionaries\ClientsDictionary.baml
 C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\obj\Debug\Dictionaries\ComplaintsDictionary.baml
+C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\bin\Debug\itextsharp.dll
+C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\bin\Debug\itextsharp.xml

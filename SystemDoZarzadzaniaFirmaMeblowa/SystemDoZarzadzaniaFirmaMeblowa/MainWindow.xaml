@@ -64,7 +64,7 @@
                             </Grid.RowDefinitions>
                             <Button Style="{StaticResource MainButtonStyle}" Grid.Row="0" Content="Zarządzaj &#xD;&#xA;zamówieniami" Margin="10,10,10,1.333" Command="{Binding changeTabCommand}" CommandParameter="3"/>
                             <Button Style="{StaticResource MainButtonStyle}" Grid.Row="1" Content="Złóż &#xD;&#xA;zamówienie" Margin="10,8.667,10,7.667" Command="{Binding changeTabCommand}" CommandParameter="4" />
-                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="2" Content="Generuj &#xD;&#xA;Raport" Margin="10,0.333,10,10.333"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="2" Content="Generuj &#xD;&#xA;Raport" Margin="10,0.333,10,10.333" Command="{Binding createRaportsCommand}" CommandParameter="{Binding SelectedDate}"/>
 
                         </Grid>
                         <Grid Grid.Column="2">

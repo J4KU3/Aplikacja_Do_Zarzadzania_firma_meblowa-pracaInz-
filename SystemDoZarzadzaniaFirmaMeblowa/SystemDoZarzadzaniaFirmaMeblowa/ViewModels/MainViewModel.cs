@@ -11,6 +11,7 @@ using SystemDoZarzadzaniaFirmaMeblowa.Commands.LoginPageCommands;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.Orders;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.ClientsFolder;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.ComplaintsFolder;
+using SystemDoZarzadzaniaFirmaMeblowa.Commands.Raports;
 
 namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 {
@@ -27,6 +28,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         public DeleteOrderCommand deleteOrderCommand { get; }
         public EditOrderCommand editOrderCommand { get; }
         public SearchOrderCommand searchOrderCommand { get; }
+        public CreateRaportsCommand createRaportsCommand { get; }
 
         //
         //klienci
@@ -150,6 +152,20 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         #endregion
         //Zamowienia
         #region Zamówienia
+        private DateTime _selectedDate = DateTime.UtcNow;
+
+        public DateTime SelectedDate
+        {
+            get { return _selectedDate; }
+            set
+            {
+                if (_selectedDate != value)
+                {
+                    _selectedDate = value;
+                    OnPropertyChanged(nameof(SelectedDate));
+                }
+            }
+        }
         private OrdersModel _order;
         public OrdersModel ModelOrder
         {
@@ -303,6 +319,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             deleteOrderCommand = new DeleteOrderCommand(this);
             editOrderCommand = new EditOrderCommand(this);
             searchOrderCommand = new SearchOrderCommand(this);
+            createRaportsCommand = new CreateRaportsCommand(this);
             //Klienci
             loadClientsCommand = new LoadClientsCommand(this);
             loadClientsCommand.Execute(0);
