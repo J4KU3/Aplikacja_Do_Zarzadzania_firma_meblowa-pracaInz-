@@ -30,6 +30,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         public EditOrderCommand editOrderCommand { get; }
         public SearchOrderCommand searchOrderCommand { get; }
         public CreateRaportsCommand createRaportsCommand { get; }
+        public AddNewOrderCommand addNewOrderCommand { get; }
 
         //
         //klienci
@@ -49,6 +50,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         public ExitCommand exitCommand { get; }
         public OpenAddEmployeeCommand openEmployeeWidnowCommand { get; }
         public OpenClientsAddWindowCommand openClientsWindow { get; }
+        public OpenClientsWindowCommand openClientsWindowCommand { get; }
         //
         #endregion
         //Listy
@@ -120,6 +122,19 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         #region Zmienne
         //Pracownicy
         #region pracownicy
+        private EmployeeModel _loginID;
+        public EmployeeModel LoginID
+        {
+            get
+            {
+                return _loginID;
+            }
+            set
+            {
+                _loginID = value;
+                OnPropertyChanged();
+            }
+        }
 
         private EmployeeModel _employee;
         public EmployeeModel ModelEmployee
@@ -151,7 +166,35 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         }
         #endregion
         //Zamowienia
+        private OrdersModel _orderToData;
+        public OrdersModel OrderToData
+        {
+            get
+            {
+                return _orderToData;
+
+            }
+            set
+            {
+                _orderToData = value;
+                OnPropertyChanged();
+            }
+        }
         #region Zamówienia
+        private ClientsModel _selectedClientFromList;
+        public ClientsModel SelectedClientFromList
+        {
+            get
+            {
+                return _selectedClientFromList;
+            }
+            set
+            {
+                _selectedClientFromList = value;
+
+                OnPropertyChanged();
+            }
+        }
         private DateTime _selectedDate = DateTime.UtcNow;
 
         public DateTime SelectedDate
@@ -278,6 +321,21 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         //głowne zmienne 
         #region główne zmeinne 
 
+        private DateTime _actualDate;
+        public DateTime ActualDate
+        {
+            get
+            {
+                return _actualDate;
+            }
+            set
+            {
+                _actualDate = value;
+
+            }
+        }
+
+
         private int _selectedPage;
 
         public int SelectedPage
@@ -300,6 +358,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 
         public MainViewModel()
         {
+
             //pracownicy
             _employee = new EmployeeModel(new Data.Employees());
             loadEmployeesCommand = new LoadEmployeesCommand(this);
@@ -307,12 +366,16 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             employeeDeleteCommand = new EmployeeDeleteCommand(this);
             editEmployeeCommand = new EditEmployeeCommand(this);
             //głowne komendy 
+            ActualDate = DateTime.UtcNow.Date;
             changeTabCommand = new ChangeTabCommand(this);
             loginCommand = new LoginCommand(this);
             exitCommand = new ExitCommand(this);
             openEmployeeWidnowCommand = new OpenAddEmployeeCommand(this);
             openClientsWindow = new OpenClientsAddWindowCommand(this);
+            openClientsWindowCommand = new OpenClientsWindowCommand(this);
             //Zamówienia
+            _orderToData = new OrdersModel(new Data.Orders());
+            _selectedClientFromList = new ClientsModel(new Data.Clients());
             _order = new OrdersModel(new Data.Orders());
             loadOrdersCommand = new LoadOrdersCommand(this);
             loadOrdersCommand.Execute(0);
@@ -320,6 +383,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
             editOrderCommand = new EditOrderCommand(this);
             searchOrderCommand = new SearchOrderCommand(this);
             createRaportsCommand = new CreateRaportsCommand(this);
+            addNewOrderCommand = new AddNewOrderCommand(this);
             //Klienci
             loadClientsCommand = new LoadClientsCommand(this);
             loadClientsCommand.Execute(0);

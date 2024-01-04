@@ -15,7 +15,7 @@
         <Setter Property="BorderBrush" Value="White"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontSize" Value="25"/>
-        
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
 
         <Setter Property="Template">

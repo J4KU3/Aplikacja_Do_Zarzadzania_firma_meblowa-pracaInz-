@@ -37,3 +37,5 @@ C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarza
 C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\bin\Debug\Images\LogoRaport.jpg
 C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\obj\Debug\UserCustomControl\PasswordCustonControl\PasswordControl.g.cs
 C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\obj\Debug\UserCustomControl\PasswordCustonControl\PasswordControl.baml
+C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\obj\Debug\Views\ClientsView.g.cs
+C:\Users\kuba2\OneDrive\Pulpit\Praca_Inzynierska\Praca_inzynierska\SystemDoZarzadzaniaFirmaMeblowa\SystemDoZarzadzaniaFirmaMeblowa\obj\Debug\Views\ClientsView.baml

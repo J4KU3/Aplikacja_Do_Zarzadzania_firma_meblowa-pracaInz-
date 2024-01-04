@@ -77,6 +77,9 @@
     <Compile Include="Commands\BaseCommand\CommandBase.cs" />
     <Compile Include="Commands\ClientsFolder\AddClientsViewCommands\AddClientsCommand.cs" />
     <Compile Include="Commands\ClientsFolder\AddClientsViewCommands\CloseAddClientsWindow.cs" />
+    <Compile Include="Commands\ClientsFolder\ClientsWindowCommands\ExitClientsWindowCommand.cs" />
+    <Compile Include="Commands\ClientsFolder\ClientsWindowCommands\LoadClientsFromData.cs" />
+    <Compile Include="Commands\ClientsFolder\ClientsWindowCommands\SearchClientsCommand.cs" />
     <Compile Include="Commands\ClientsFolder\DeleteClientsCommand.cs" />
     <Compile Include="Commands\ClientsFolder\EditClientsCommand.cs" />
     <Compile Include="Commands\ComplaintsFolder\AddComplaints.cs" />
@@ -94,6 +97,8 @@
     <Compile Include="Commands\Navigation\ExitCommand.cs" />
     <Compile Include="Commands\Navigation\OpenAddEmployeeCommand.cs" />
     <Compile Include="Commands\Navigation\OpenClientsAddWindowCommand.cs" />
+    <Compile Include="Commands\Navigation\OpenClientsWindowCommand.cs" />
+    <Compile Include="Commands\Orders\AddNewOrderCommand.cs" />
     <Compile Include="Commands\Orders\DeleteOrderCommand.cs" />
     <Compile Include="Commands\Orders\EditOrderCommand.cs" />
     <Compile Include="Commands\Orders\LoadOrdersCommand.cs" />
@@ -139,12 +144,16 @@
     <Compile Include="ViewModels\AddClientsViewModel.cs" />
     <Compile Include="ViewModels\AddEmployeeWindowViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ClientsWindowViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\AddClientView.xaml.cs">
       <DependentUpon>AddClientView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddEmployeeWindow.xaml.cs">
       <DependentUpon>AddEmployeeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClientsView.xaml.cs">
+      <DependentUpon>ClientsView.xaml</DependentUpon>
     </Compile>
     <Page Include="Dictionaries\ClientsDictionary.xaml">
       <SubType>Designer</SubType>
@@ -191,6 +200,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AddEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ClientsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

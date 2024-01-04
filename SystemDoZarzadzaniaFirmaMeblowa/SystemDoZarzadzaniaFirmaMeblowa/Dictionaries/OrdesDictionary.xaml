@@ -15,6 +15,7 @@
         <Setter Property="BorderBrush" Value="White"/>
         <Setter Property="Foreground" Value="Red"/>
         <Setter Property="FontSize" Value="19"/>
+        <Setter Property="Cursor" Value="Hand"/>
 
         <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
 
@@ -54,6 +55,7 @@
         <Setter Property="BorderBrush" Value="White"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontSize" Value="19"/>
+        <Setter Property="Cursor" Value="Hand"/>
 
         <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
 
@@ -93,6 +95,7 @@
         <Setter Property="BorderBrush" Value="White"/>
         <Setter Property="Foreground" Value="Blue"/>
         <Setter Property="FontSize" Value="19"/>
+        <Setter Property="Cursor" Value="Hand"/>
 
         <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
 
@@ -132,6 +135,7 @@
         <Setter Property="BorderBrush" Value="White"/>
         <Setter Property="Foreground" Value="Green"/>
         <Setter Property="FontSize" Value="19"/>
+        <Setter Property="Cursor" Value="Hand"/>
 
         <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
 
@@ -164,7 +168,7 @@
         </Style.Triggers>
     </Style>
     
-    <Style x:Key="SearchOrderTextBoxStyle" TargetType="{x:Type TextBox}">
+    <Style x:Key="SearchTextBoxStyle" TargetType="{x:Type TextBox}">
         <Setter Property="Background" Value="White"/>
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="BorderBrush" Value="Black"/>
@@ -189,7 +193,7 @@
         <Setter Property="BorderBrush" Value="White"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontSize" Value="19"/>
-
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
 
         <Setter Property="Template">
@@ -221,5 +225,36 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="OrderTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="Cursor" Value="Pen"/>
 
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid >
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                            <Label x:Name="ZnakWodny" Content="{TemplateBinding Tag}" Foreground="LightGray" Visibility="Collapsed" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="ZnakWodny" Value="Visible"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

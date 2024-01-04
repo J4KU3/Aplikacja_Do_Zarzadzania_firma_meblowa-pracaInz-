@@ -8,6 +8,7 @@
         <Setter Property="Background" Value="DarkBlue"/>
         <Setter Property="BorderBrush" Value="White"/>
         <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
 
         <Setter Property="Template">
@@ -38,7 +39,7 @@
         <Setter Property="BorderBrush" Value="White"/>
         <Setter Property="Foreground" Value="Red"/>
         <Setter Property="FontSize" Value="20"/>
-
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
 
         <Setter Property="Template">
@@ -77,7 +78,7 @@
         <Setter Property="BorderBrush" Value="White"/>
         <Setter Property="Foreground" Value="Blue"/>
         <Setter Property="FontSize" Value="20"/>
-
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
 
         <Setter Property="Template">
@@ -116,7 +117,7 @@
         <Setter Property="BorderBrush" Value="White"/>
         <Setter Property="Foreground" Value="Green"/>
         <Setter Property="FontSize" Value="20"/>
-
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
 
         <Setter Property="Template">

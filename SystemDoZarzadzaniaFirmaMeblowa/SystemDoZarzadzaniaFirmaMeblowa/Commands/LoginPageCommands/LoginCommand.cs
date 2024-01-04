@@ -37,6 +37,8 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.LoginPageCommands
                     var found =  _mainviewmodel.ListOfEmployee.FirstOrDefault(x=>x.Mail == employeMail && x.Password== employePass );
                     if (found!=null)
                     {
+                        _mainviewmodel.ModelEmployee.employeeID = found.employeeID;
+                        
                         _mainviewmodel.SelectedPage = 1;
                     }
                     else

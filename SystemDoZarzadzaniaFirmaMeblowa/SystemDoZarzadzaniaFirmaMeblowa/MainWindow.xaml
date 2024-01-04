@@ -38,7 +38,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="HomePage" Visibility="Hidden" >
+            <TabItem Header="HomePage">
 
                 <Grid  Margin="-11,-3,-2.333,-8.667">
                     <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
@@ -122,7 +122,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Zarządzanie Zamowieniami" Visibility="Hidden" >
+            <TabItem Header="Zarządzanie Zamowieniami" >
                 <Grid>
                     <Viewbox>
                         <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33" Width="1179"/>
@@ -155,7 +155,7 @@
                             <Button Style="{StaticResource DeleteOrdersButtonStyle}" Content="Usuń Zamowienie" Margin="0,173,10,0" VerticalAlignment="Top" Height="46" Command="{Binding deleteOrderCommand}"/>
                             <Button Style="{StaticResource EditOrdersButtonStyle}" Content="Edytuj Zamowienie" Margin="0,224,10,0" VerticalAlignment="Top" Height="46" Command="{Binding editOrderCommand}"/>
                             <Button Style="{StaticResource BackButtonStyle}" Content="Wstecz" Margin="10,0,10,9.333" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="1"/>
-                            <TextBox Style="{StaticResource SearchOrderTextBoxStyle}" Height="46" Margin="0,10,10,0" TextWrapping="Wrap" Text="{Binding ModelOrder.ItemName}" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+                            <TextBox Style="{StaticResource SearchTextBoxStyle}" Height="46" Margin="0,10,10,0" TextWrapping="Wrap" Text="{Binding ModelOrder.ItemName}" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
                             <Button Style="{StaticResource SearchOrderButtonStyle}" Content="Szukaj" Margin="0,61,10,0" VerticalAlignment="Top" Height="46" Command="{Binding searchOrderCommand}"/>
                             <Button Style="{StaticResource SearchOrderButtonStyle}" Content="Zobacz klientów" Margin="0,275,10,0" VerticalAlignment="Top" Height="46" Command="{Binding changeTabCommand}" CommandParameter="5"/>
                         </Grid>
@@ -163,7 +163,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Zamówienia" Visibility="Hidden">
+            <TabItem Header="Zamówienia" >
                 <Grid  Margin="-11,-3,-2.333,-8.667">
                     <Viewbox>
                         <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33" Width="1275"/>
@@ -171,14 +171,75 @@
 
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="267*"/>
-                            <ColumnDefinition Width="349*"/>
+
+                            <ColumnDefinition Width="289*"/>
+                            <ColumnDefinition Width="331*"/>
                             <ColumnDefinition Width="180*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Grid Grid.Column="2">
+                        <Grid Margin="2,0,9,0.333" Grid.Column="2">
                             <Button Style="{StaticResource BackButtonStyle}" Content="Wstecz" Margin="10,0,10,9.333" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="1"/>
+                            <Button Style="{StaticResource AddButtonStyle}" Content="Dodaj" Margin="10,0,9.667,61.333" Height="46" VerticalAlignment="Bottom" Command="{Binding addNewOrderCommand}"/>
+                            <Label Content="{Binding ActualDate.Date}" FontWeight="Bold" FontSize="20" Margin="71,0,88,0" VerticalAlignment="Top" Height="37"/>
+                            <Button Style="{StaticResource SearchOrderButtonStyle}" Content="spis klientów " Margin="10,109,0,0" Command="{Binding openClientsWindowCommand}" Height="50" VerticalAlignment="Top"/>
+                            <Button Content="Dodaj klienta" Style="{StaticResource AddButtonStyle}" Margin="10,40,0,0" VerticalAlignment="Top" Height="46" RenderTransformOrigin="0.5,0.5" Command="{Binding openClientsWindow}"/>
 
+                        </Grid>
+                        <Grid Grid.Column="1" Margin="1.667,0,4,0.333">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <ComboBox Cursor="Hand" FontSize="15" Margin="5,36,9.667,0" ItemsSource="{Binding ListOfClients}" DisplayMemberPath="ClientID" SelectedItem="{Binding SelectedClientFromList}" Height="27" VerticalAlignment="Top"/>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <CheckBox Content="Projekt" IsChecked="{Binding OrderToData.Project}" FontWeight="Bold" FontSize="15" Margin="10,36,76,23"/>
+
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <TextBox Tag="Kolor" Style="{StaticResource OrderTextBoxStyle}" Margin="53,10,51.667,10" TextWrapping="Wrap" Text="{Binding OrderToData.ItemColor}"/>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <TextBox Tag="Cena" Style="{StaticResource OrderTextBoxStyle}" Margin="55,10,51.667,10" TextWrapping="Wrap" Text="{Binding OrderToData.Price}"/>
+
+                            </Grid>
+                            <Grid Grid.Row="4">
+
+
+                            </Grid>
+                            <Label Content="Zamówienie" FontWeight="Bold" FontSize="40"  Margin="53,10,10,12.333"/>
+
+
+
+
+
+
+
+
+                        </Grid>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="2">
+
+                                <TextBox Tag="Nazawa zamówienia" Style="{StaticResource OrderTextBoxStyle}" Margin="45,10,28.333,10" TextWrapping="Wrap" Text="{Binding OrderToData.ItemName}"/>
+                            </Grid>
                         </Grid>
 
                     </Grid>
@@ -190,7 +251,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="klienci " Visibility="Hidden">
+            <TabItem Header="klienci">
                 <Grid>
                     <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
                     <Grid>
@@ -225,7 +286,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="ReklamacjeZRZ" Visibility="Hidden">
+            <TabItem Header="ReklamacjeZRZ">
                 <Grid>
                     <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
                     <Grid>
@@ -274,7 +335,7 @@
 
                         </Grid>
                         <Grid Grid.Column="1">
-                            <Label VerticalAlignment="Center" Content="Wpisz Powód" FontWeight="Bold" FontSize="24" Margin="94,2,94.667,385.333"/>
+                            <Label VerticalAlignment="Top" Content="Wpisz Powód" FontWeight="Bold" FontSize="24" Margin="94,2,75.667,0" Height="47"/>
                             <RichTextBox Style="{StaticResource AddReasonStyle}" Margin="0,49,-0.333,10.333">
                                 <FlowDocument>
                                     <Paragraph>
@@ -286,7 +347,7 @@
                         <Grid Grid.Column="0">
                             <Label Content="Wybierz zamówienie" FontWeight="Bold" FontSize="24" Margin="10,0,9.667,384.333"/>
 
-                            <ComboBox  Margin="10,45,9.667,0" VerticalAlignment="Top" ItemsSource="{Binding ListOfOrders}" DisplayMemberPath="OrderID" Height="35" SelectedItem="{Binding SelectedComplaintsOrder}"/>
+                            <ComboBox Cursor="Hand" Margin="10,45,9.667,0" VerticalAlignment="Top" ItemsSource="{Binding ListOfOrders}" DisplayMemberPath="OrderID" Height="35" SelectedItem="{Binding SelectedComplaintsOrder}"/>
 
 
 
