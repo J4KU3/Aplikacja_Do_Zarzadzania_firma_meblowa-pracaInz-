@@ -25,7 +25,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.ClientsFolder.ClientsWindowCo
         }
         public override void Execute(object parameter)
         {
-            if (_clientsWindowViewModel.ModelClients.CFName != "")
+            if (_clientsWindowViewModel.ModelClients.CFName != "" && _clientsWindowViewModel.ModelClients.CFName != null)
             {
                 using (var resource = new ZarzadzanieFirmaDBEntities())
                 {

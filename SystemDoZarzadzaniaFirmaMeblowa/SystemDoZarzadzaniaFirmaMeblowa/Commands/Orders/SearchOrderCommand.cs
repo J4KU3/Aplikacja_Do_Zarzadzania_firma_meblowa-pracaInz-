@@ -21,11 +21,11 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Orders
         }
         public override bool CanExecute(object parameter)
         {
-            return base.CanExecute(parameter);
+            return true;
         }
         public override void Execute(object parameter)
         {
-            if (_mainviewmodel.ModelOrder.ItemName != "")
+            if (_mainviewmodel.ModelOrder.ItemName != "" && _mainviewmodel.ModelOrder.ItemName != null)
             {
                 using (var resource = new ZarzadzanieFirmaDBEntities())
                 {
