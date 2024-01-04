@@ -19,6 +19,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         public CloseWindowCommand closeWindowCommand { get; }
         //Zmienne 
         private readonly MainViewModel _mainViewModel;
+
         private EmployeeModel _employeeModel;
 
         public EmployeeModel ModelEmplo

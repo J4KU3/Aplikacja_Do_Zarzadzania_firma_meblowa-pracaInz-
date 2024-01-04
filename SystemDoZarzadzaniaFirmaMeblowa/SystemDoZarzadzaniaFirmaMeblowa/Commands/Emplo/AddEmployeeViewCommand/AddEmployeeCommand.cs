@@ -26,6 +26,8 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Emplo.AddEmployeeViewCommand
 
         public override void Execute(object parameter)
         {
+         
+           
             using (var Employee = new ZarzadzanieFirmaDBEntities())
             {
                 if (_addEmployeeWindowViewModel.ModelEmplo.EFirstName !=null && _addEmployeeWindowViewModel.ModelEmplo.ELastName != null && _addEmployeeWindowViewModel.ModelEmplo.Mail != null

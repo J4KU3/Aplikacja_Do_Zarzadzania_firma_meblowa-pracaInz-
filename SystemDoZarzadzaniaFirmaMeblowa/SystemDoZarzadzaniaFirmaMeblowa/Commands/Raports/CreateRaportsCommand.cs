@@ -111,8 +111,8 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Raports
             {
                 MessageBox.Show("Plik LogoRaport.jpg nie został znaleziony.");
             }
-            
-           
+
+
 
             height += 200;  // zwiększ wysokość, aby umieścić logo
 
@@ -127,7 +127,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Raports
             dt.Columns.Add("Produkt");
             dt.Columns.Add("Kolor");
             dt.Columns.Add("Cena");
-            
+
 
 
 
@@ -135,11 +135,11 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Raports
             {
                 DataRow dr = dt.NewRow();
                 dr[0] = order.OrderID;
-                dr[1] = order.OrderDate.Value.Day;
+                dr[1] = order.OrderDate.Value.ToString("dd.MM");
                 dr[2] = order.ItemName;
                 dr[3] = order.ItemColor;
                 dr[4] = order.Price;
-                
+
                 dt.Rows.Add(dr);
             }
 

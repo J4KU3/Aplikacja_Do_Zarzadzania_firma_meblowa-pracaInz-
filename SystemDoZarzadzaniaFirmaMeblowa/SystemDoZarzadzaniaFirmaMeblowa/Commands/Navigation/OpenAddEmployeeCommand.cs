@@ -27,7 +27,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation
         {
             AddEmployeeWindow window = new AddEmployeeWindow();
 
-            window.Show();
+            window.Show(); 
         }
     }
 }

@@ -10,5 +10,6 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/model1.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/model1.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logoraport.jpg")]
 
 

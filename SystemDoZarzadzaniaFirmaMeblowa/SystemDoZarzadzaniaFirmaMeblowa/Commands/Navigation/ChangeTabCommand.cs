@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using SystemDoZarzadzaniaFirmaMeblowa.ViewModels;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.BaseCommand;
 using System.Windows;
+using SystemDoZarzadzaniaFirmaMeblowa.UserCustomControl.PasswordCustonControl;
+
 
 namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation
 {
@@ -50,6 +52,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation
                 
                 _mainviewmodel.ModelEmployee.Mail = null;
                 _mainviewmodel.ModelEmployee.Password = null;
+                
                 _mainviewmodel.SelectedPage = int.Parse(page);
             }
             else

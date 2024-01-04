@@ -12,6 +12,7 @@ using SystemDoZarzadzaniaFirmaMeblowa.Commands.Orders;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.ClientsFolder;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.ComplaintsFolder;
 using SystemDoZarzadzaniaFirmaMeblowa.Commands.Raports;
+using SystemDoZarzadzaniaFirmaMeblowa.UserCustomControl.PasswordCustonControl;
 
 namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 {
@@ -121,7 +122,6 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
         #region pracownicy
 
         private EmployeeModel _employee;
-
         public EmployeeModel ModelEmployee
         {
             get

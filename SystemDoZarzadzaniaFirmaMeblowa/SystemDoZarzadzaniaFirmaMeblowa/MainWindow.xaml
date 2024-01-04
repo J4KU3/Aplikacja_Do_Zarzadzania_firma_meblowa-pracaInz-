@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SystemDoZarzadzaniaFirmaMeblowa"
+        xmlns:locals="clr-namespace:SystemDoZarzadzaniaFirmaMeblowa.UserCustomControl.PasswordCustonControl"
+
         xmlns:Vm ="clr-namespace:SystemDoZarzadzaniaFirmaMeblowa.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -12,28 +14,31 @@
     </Window.DataContext>
     <Grid>
         <TabControl Margin="0,-25,0.333,-0.333" SelectedIndex="{Binding SelectedPage}">
-            <TabItem Header="LoginPage">
+            <TabItem Header="LoginPage" >
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="206*"/>
                         <ColumnDefinition Width="581*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="1" Margin="0,0,-0.333,0.333">
-                        <Image Source="Zdjecie1.jpg" Width="auto" Height="auto" Margin="-46,-21,-58,-12"/>
+                        <Viewbox Margin="-87,0,-99,-32">
+                            <Image Source="Zdjecie1.jpg" Width="auto" Height="auto" Margin="-46,-21,-58,-12"/>
+                        </Viewbox>
+
                     </Grid>
                     <Grid Grid.Column="0" Background="#FFBFBCBC" Margin="-2,-2,0,-11.667" >
                         <Button Command="{Binding loginCommand}" Content="Zaloguj" Margin="10,0,12,34" VerticalAlignment="Bottom" Height="53" Style="{StaticResource LoginButtonStyle}"/>
                         <TextBox Style="{StaticResource LoginTextBoxStyle}" Height="52" Margin="10,111,12,0" TextWrapping="Wrap" Text="{Binding ModelEmployee.Mail}" VerticalAlignment="Top" FontSize="40"/>
                         <Label Content="Login" Margin="10,62,12,0" VerticalAlignment="Top" FontSize="30" Height="49" FontWeight="Bold"/>
                         <Label Content="Hasło" Margin="12,168,10,0" VerticalAlignment="Top" Height="49" FontSize="30" FontWeight="Bold" />
-                        <TextBox Style="{StaticResource LoginTextBoxStyle}" Text="{Binding ModelEmployee.Password}" Margin="12,222,12,0" VerticalAlignment="Top" Height="52" FontSize="40"/>
+                        <locals:PasswordControl x:Name="passwordBox" Password="{Binding ModelEmployee.Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="12,222,12,0" VerticalAlignment="Top" Height="52" FontSize="40"/>
 
 
                     </Grid>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="HomePage" >
+            <TabItem Header="HomePage" Visibility="Hidden" >
 
                 <Grid  Margin="-11,-3,-2.333,-8.667">
                     <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
@@ -117,7 +122,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Zarządzanie Zamowieniami">
+            <TabItem Header="Zarządzanie Zamowieniami" Visibility="Hidden" >
                 <Grid>
                     <Viewbox>
                         <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33" Width="1179"/>
@@ -158,7 +163,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Zamówienia">
+            <TabItem Header="Zamówienia" Visibility="Hidden">
                 <Grid  Margin="-11,-3,-2.333,-8.667">
                     <Viewbox>
                         <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33" Width="1275"/>
@@ -185,7 +190,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="klienci">
+            <TabItem Header="klienci " Visibility="Hidden">
                 <Grid>
                     <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
                     <Grid>
@@ -220,7 +225,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="ReklamacjeZRZ">
+            <TabItem Header="ReklamacjeZRZ" Visibility="Hidden">
                 <Grid>
                     <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
                     <Grid>
@@ -250,7 +255,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Reklamacje">
+            <TabItem Header="Reklamacje" >
                 <Grid  Margin="-11,-3,-2.333,-8.667">
                     <Viewbox>
                         <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33" Width="1275"/>
@@ -269,7 +274,8 @@
 
                         </Grid>
                         <Grid Grid.Column="1">
-                            <RichTextBox Style="{StaticResource AddReasonStyle}" Margin="0,10,-0.333,10.333">
+                            <Label VerticalAlignment="Center" Content="Wpisz Powód" FontWeight="Bold" FontSize="24" Margin="94,2,94.667,385.333"/>
+                            <RichTextBox Style="{StaticResource AddReasonStyle}" Margin="0,49,-0.333,10.333">
                                 <FlowDocument>
                                     <Paragraph>
                                         <Run Text="{Binding ModelComplaints.Reason }"/>
