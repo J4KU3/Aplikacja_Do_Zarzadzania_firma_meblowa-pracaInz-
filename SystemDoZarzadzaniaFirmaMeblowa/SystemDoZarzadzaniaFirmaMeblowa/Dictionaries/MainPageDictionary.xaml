@@ -3,7 +3,7 @@
 
     <DropShadowEffect x:Key="ButtonShadowEffect"
                       Color="Black"
-                      Direction="315"
+                      Direction="270"
                       ShadowDepth="5"
                       Opacity="0.7"
                       BlurRadius="10"/>
@@ -16,6 +16,8 @@
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontSize" Value="25"/>
         <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
 
         <Setter Property="Template">

@@ -21,7 +21,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.ClientsFolder.ClientsWindowCo
         }
         public override bool CanExecute(object parameter)
         {
-            return base.CanExecute(parameter);
+            return true;
         }
         public override void Execute(object parameter)
         {
@@ -32,7 +32,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.ClientsFolder.ClientsWindowCo
                     List<Data.Clients> clientsL = resource.Clients.ToList();
                    
 
-                    var searchClients = clientsL.Where(o => o.CFName == _clientsWindowViewModel.ModelClients.CFName);
+                    var searchClients = clientsL.Where(s => s.CFName == _clientsWindowViewModel.ModelClients.CFName);
 
                     List<ClientsModel> convertedList = searchClients.Select(c => new ClientsModel(c)).ToList();
                     

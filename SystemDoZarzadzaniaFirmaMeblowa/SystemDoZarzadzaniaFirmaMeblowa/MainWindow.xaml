@@ -28,7 +28,7 @@
                     </Grid>
                     <Grid Grid.Column="0" Background="#FFBFBCBC" Margin="-2,-2,0,-11.667" >
                         <Button Command="{Binding loginCommand}" Content="Zaloguj" Margin="10,0,12,34" VerticalAlignment="Bottom" Height="53" Style="{StaticResource LoginButtonStyle}"/>
-                        <TextBox Style="{StaticResource LoginTextBoxStyle}" Height="52" Margin="10,111,12,0" TextWrapping="Wrap" Text="{Binding ModelEmployee.Mail}" VerticalAlignment="Top" FontSize="40"/>
+                        <TextBox Style="{StaticResource LoginTextBoxStyle}" Height="52" Margin="10,111,12,0" TextWrapping="Wrap" Text="{Binding ModelEmployee.Mail}" VerticalAlignment="Top" FontSize="25"/>
                         <Label Content="Login" Margin="10,62,12,0" VerticalAlignment="Top" FontSize="30" Height="49" FontWeight="Bold"/>
                         <Label Content="Hasło" Margin="12,168,10,0" VerticalAlignment="Top" Height="49" FontSize="30" FontWeight="Bold" />
                         <locals:PasswordControl x:Name="passwordBox" Password="{Binding ModelEmployee.Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="12,222,12,0" VerticalAlignment="Top" Height="52" FontSize="40"/>
@@ -53,12 +53,12 @@
                         </Grid.ColumnDefinitions>
 
                         <Grid Grid.Column="3">
-                            <Button Style="{StaticResource MainButtonStyle}" Content="Wyjdź" Margin="10,0,21,13.333" VerticalAlignment="Bottom" Height="44" Command="{Binding exitCommand}"/>
-                            <Button Style="{StaticResource MainButtonStyle}" Content="Wyloguj" Margin="10,0,21,62.333" Command="{Binding changeTabCommand}" CommandParameter="0" Height="44" VerticalAlignment="Bottom"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Content="Wyjdź" Margin="10,0,21,26.333" VerticalAlignment="Bottom" Height="44" Command="{Binding exitCommand}"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Content="Wyloguj" Margin="10,0,21,75.333" Command="{Binding changeTabCommand}" CommandParameter="0" Height="44" VerticalAlignment="Bottom"/>
 
                         </Grid>
                         <Grid Grid.Column="0">
-                            <Button Style="{StaticResource MainButtonStyle}" Content="Zarządzaj  &#xD;&#xA;Pracownikami" Margin="10,10,10,10.333" Command="{Binding changeTabCommand}" CommandParameter="2" />
+                            <Button Style="{StaticResource MainButtonStyle}" Content="   Zarządzaj  &#xD;&#xA;Pracownikami" Margin="12,10,8,10.333" Command="{Binding changeTabCommand}" CommandParameter="2" />
 
                         </Grid>
                         <Grid Grid.Column="1">
@@ -67,9 +67,9 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="0" Content="Zarządzaj &#xD;&#xA;zamówieniami" Margin="10,10,10,1.333" Command="{Binding changeTabCommand}" CommandParameter="3"/>
-                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="1" Content="Złóż &#xD;&#xA;zamówienie" Margin="10,8.667,10,7.667" Command="{Binding changeTabCommand}" CommandParameter="4" />
-                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="2" Content="Generuj &#xD;&#xA;Raport" Margin="10,0.333,10,10.333" Command="{Binding createRaportsCommand}" CommandParameter="{Binding SelectedDate}"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="0" Content="    Zarządzaj &#xD;&#xA;zamówieniami" Margin="10,10,10,1.333" Command="{Binding changeTabCommand}" CommandParameter="3" HorizontalContentAlignment="Center"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="1" Content="     Złóż &#xD;&#xA;zamówienie" Margin="10,7.667,10,8.667" Command="{Binding changeTabCommand}" CommandParameter="4" />
+                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="2" Content="Generuj &#xD;&#xA; Raport" Margin="10,0.333,10,10.333" Command="{Binding createRaportsCommand}" CommandParameter="{Binding SelectedDate}"/>
 
                         </Grid>
                         <Grid Grid.Column="2">
@@ -77,8 +77,8 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="0" Content="Dodaj &#xD;&#xA;Reklamacje" Margin="10,10,10,9.667" Command="{Binding changeTabCommand}" CommandParameter="7"/>
-                            <Button Style="{StaticResource MainButtonStyle}" Content="Zarządzaj &#xD;&#xA;reklamacjami " Margin="10,10.333" Grid.Row="1" Command="{Binding changeTabCommand}" CommandParameter="6"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Grid.Row="0" Content="   Dodaj &#xD;&#xA;Reklamacje" Margin="10,14,10,5.667" Command="{Binding changeTabCommand}" CommandParameter="7"/>
+                            <Button Style="{StaticResource MainButtonStyle}" Content="   Zarządzaj &#xD;&#xA;reklamacjami " Margin="10,6.333,10,14.333" Grid.Row="1" Command="{Binding changeTabCommand}" CommandParameter="6"/>
 
                         </Grid>
 
@@ -178,8 +178,8 @@
                         </Grid.ColumnDefinitions>
 
                         <Grid Margin="2,0,9,0.333" Grid.Column="2">
-                            <Button Style="{StaticResource BackButtonStyle}" Content="Wstecz" Margin="10,0,10,9.333" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="1"/>
-                            <Button Style="{StaticResource AddButtonStyle}" Content="Dodaj" Margin="10,0,9.667,61.333" Height="46" VerticalAlignment="Bottom" Command="{Binding addNewOrderCommand}"/>
+                            <Button Style="{StaticResource BackButtonStyle}" Content="Wstecz" Margin="10,0,10,22" Height="46" VerticalAlignment="Bottom" Command="{Binding changeTabCommand}" CommandParameter="1"/>
+                            <Button Style="{StaticResource AddButtonStyle}" Content="Dodaj" Margin="10,0,9,73" Height="46" VerticalAlignment="Bottom" Command="{Binding addNewOrderCommand}"/>
                             <Label Content="{Binding ActualDate.Date}" FontWeight="Bold" FontSize="20" Margin="71,0,88,0" VerticalAlignment="Top" Height="37"/>
                             <Button Style="{StaticResource SearchOrderButtonStyle}" Content="spis klientów " Margin="10,109,0,0" Command="{Binding openClientsWindowCommand}" Height="50" VerticalAlignment="Top"/>
                             <Button Content="Dodaj klienta" Style="{StaticResource AddButtonStyle}" Margin="10,40,0,0" VerticalAlignment="Top" Height="46" RenderTransformOrigin="0.5,0.5" Command="{Binding openClientsWindow}"/>
@@ -199,10 +199,11 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0">
-                                    <ComboBox Cursor="Hand" FontSize="15" Margin="5,36,9.667,0" ItemsSource="{Binding ListOfClients}" DisplayMemberPath="ClientID" SelectedItem="{Binding SelectedClientFromList}" Height="27" VerticalAlignment="Top"/>
+                                    <ComboBox Cursor="Hand" FontSize="15" Margin="5,0,9.667,18" ItemsSource="{Binding ListOfClients}" DisplayMemberPath="ClientID" SelectedItem="{Binding SelectedClientFromList}" Height="27" VerticalAlignment="Bottom"/>
+                                    <Label Content="Klient:" FontWeight="Bold" FontSize="20" Margin="10,-1,9.667,50" VerticalAlignment="Bottom"/>
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <CheckBox Content="Projekt" IsChecked="{Binding OrderToData.Project}" FontWeight="Bold" FontSize="15" Margin="10,36,76,23"/>
+                                    <CheckBox Content="Projekt" IsChecked="{Binding OrderToData.Project}" FontWeight="Bold" FontSize="15" Margin="10,0,76,10" Height="27" VerticalAlignment="Bottom"/>
 
                                 </Grid>
                             </Grid>
