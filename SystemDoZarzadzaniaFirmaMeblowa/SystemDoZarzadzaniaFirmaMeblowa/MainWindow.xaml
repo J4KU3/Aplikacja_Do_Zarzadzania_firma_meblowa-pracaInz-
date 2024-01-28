@@ -239,7 +239,7 @@
 
                             <Grid Grid.Row="2">
 
-                                <TextBox Tag="Nazawa zamówienia" Style="{StaticResource OrderTextBoxStyle}" Margin="45,10,28.333,10" TextWrapping="Wrap" Text="{Binding OrderToData.ItemName}"/>
+                                <TextBox Tag="Nazawa produktu" Style="{StaticResource OrderTextBoxStyle}" Margin="45,10,28.333,10" TextWrapping="Wrap" Text="{Binding OrderToData.ItemName}"/>
                             </Grid>
                         </Grid>
 

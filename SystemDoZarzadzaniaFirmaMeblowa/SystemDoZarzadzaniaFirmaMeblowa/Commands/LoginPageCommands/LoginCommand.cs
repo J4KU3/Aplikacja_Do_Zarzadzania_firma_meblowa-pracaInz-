@@ -22,7 +22,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.LoginPageCommands
 
         public override bool CanExecute(object parameter)
         {
-            return base.CanExecute(parameter);
+            return true;
         }
 
         public override void Execute(object parameter)
