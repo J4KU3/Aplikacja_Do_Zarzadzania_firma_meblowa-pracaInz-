@@ -97,7 +97,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Raports
             string line = "_________________________________________________________________________________________";
 
             //Logo firmy (Zmienić ścieżkę jeśli bedzie otwierany na innym komputerze)
-            string imagePath = "C:/Users/kuba2/OneDrive/Pulpit/Praca_Inzynierska/Praca_inzynierska/SystemDoZarzadzaniaFirmaMeblowa/SystemDoZarzadzaniaFirmaMeblowa/Images/LogoRaport.jpg";
+            var imagePath = "LogoRaport.jpg";
 
 
             if (File.Exists(imagePath))

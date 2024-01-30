@@ -12,7 +12,7 @@ using System.Windows;
 namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.LoginPageCommands
 {
    public class LoginCommand:CommandBase
-    {
+   {
         private readonly MainViewModel _mainviewmodel;
 
         public LoginCommand(MainViewModel mainViewModel)
@@ -52,5 +52,5 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.LoginPageCommands
 
         
 
-    }
+   }
 }

@@ -253,9 +253,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Images\LogoRaport.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Images\LogoRaport.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Zdjecie2.jpg" />

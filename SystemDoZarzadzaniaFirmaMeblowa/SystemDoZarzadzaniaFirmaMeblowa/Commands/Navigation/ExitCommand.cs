@@ -19,7 +19,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation
 
         public override bool CanExecute(object parameter)
         {
-            return base.CanExecute(parameter);
+            return true;
         }
         public override void Execute(object parameter)
         {

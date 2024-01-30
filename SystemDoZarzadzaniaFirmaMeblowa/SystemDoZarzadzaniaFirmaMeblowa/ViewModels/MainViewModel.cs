@@ -18,6 +18,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
+        //Komendy
         #region Komendy
         //pracownict
         public LoadEmployeesCommand loadEmployeesCommand { get; }
