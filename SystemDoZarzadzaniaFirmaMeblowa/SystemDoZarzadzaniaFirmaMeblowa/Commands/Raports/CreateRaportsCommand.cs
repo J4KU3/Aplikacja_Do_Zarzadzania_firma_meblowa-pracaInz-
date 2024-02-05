@@ -96,7 +96,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Raports
 
             string line = "_________________________________________________________________________________________";
 
-            //Logo firmy (Zmienić ścieżkę jeśli bedzie otwierany na innym komputerze)
+            //Logo firmy 
             var imagePath = "LogoRaport.jpg";
 
 

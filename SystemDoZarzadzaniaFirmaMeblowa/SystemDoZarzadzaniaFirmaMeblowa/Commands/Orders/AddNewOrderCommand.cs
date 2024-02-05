@@ -46,7 +46,12 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Orders
                     Order.SaveChanges();
                     MessageBox.Show("Dodano nowe zamówienie ");
                     _mainviewModel.SelectedClientFromList = null;
-                    _mainviewModel.OrderToData = null;
+                   _mainviewModel.OrderToData.ItemName = null;
+                    _mainviewModel.OrderToData.ItemColor = null;
+                    
+                    _mainviewModel.OrderToData.Price = null;
+                    _mainviewModel.OrderToData.Project = null;
+                    
                     _mainviewModel.SelectedPage = 1;
 
                 }
