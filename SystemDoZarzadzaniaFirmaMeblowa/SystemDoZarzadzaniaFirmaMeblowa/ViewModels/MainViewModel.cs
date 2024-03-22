@@ -359,7 +359,6 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.ViewModels
 
         public MainViewModel()
         {
-
             //pracownicy
             _employee = new EmployeeModel(new Data.Employees());
             loadEmployeesCommand = new LoadEmployeesCommand(this);

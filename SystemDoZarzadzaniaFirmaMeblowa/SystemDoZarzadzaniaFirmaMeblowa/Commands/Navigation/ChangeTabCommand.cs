@@ -55,6 +55,12 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Navigation
                 
                 _mainviewmodel.SelectedPage = int.Parse(page);
             }
+            if (page=="1")
+            {
+                _mainviewmodel.loadClientsCommand.Execute(0);
+                _mainviewmodel.loadEmployeesCommand.Execute(0);
+                _mainviewmodel.SelectedPage = int.Parse(page);
+            }
             else
             {
                 _mainviewmodel.SelectedPage = int.Parse(parameter as string);

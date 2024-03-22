@@ -76,7 +76,7 @@
 
         <Setter Property="Background" Value="Black"/>
         <Setter Property="BorderBrush" Value="White"/>
-        <Setter Property="Foreground" Value="Blue"/>
+        <Setter Property="Foreground" Value="Yellow"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Effect" Value="{StaticResource ButtonShadowEffect}"/>
@@ -99,7 +99,7 @@
                     <Setter.Value>
                         <LinearGradientBrush>
                             <GradientStop Color="Black" Offset="1" />
-                            <GradientStop Color="Blue" Offset="0" />
+                            <GradientStop Color="Yellow" Offset="0" />
                         </LinearGradientBrush>
                     </Setter.Value>
                 </Setter>

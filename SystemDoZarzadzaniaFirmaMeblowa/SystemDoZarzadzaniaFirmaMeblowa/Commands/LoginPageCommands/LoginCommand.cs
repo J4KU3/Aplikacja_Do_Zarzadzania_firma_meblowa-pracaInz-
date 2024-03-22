@@ -49,8 +49,5 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.LoginPageCommands
                 }
             }
         }
-
-        
-
    }
 }

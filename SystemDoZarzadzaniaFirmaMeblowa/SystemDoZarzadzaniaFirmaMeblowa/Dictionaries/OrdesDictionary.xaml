@@ -93,7 +93,7 @@
 
         <Setter Property="Background" Value="Black"/>
         <Setter Property="BorderBrush" Value="White"/>
-        <Setter Property="Foreground" Value="Blue"/>
+        <Setter Property="Foreground" Value="Yellow"/>
         <Setter Property="FontSize" Value="19"/>
         <Setter Property="Cursor" Value="Hand"/>
 
@@ -117,7 +117,7 @@
                     <Setter.Value>
                         <LinearGradientBrush>
                             <GradientStop Color="Black" Offset="1" />
-                            <GradientStop Color="Blue" Offset="0" />
+                            <GradientStop Color="Yellow" Offset="0" />
                         </LinearGradientBrush>
                     </Setter.Value>
                 </Setter>
@@ -240,7 +240,7 @@
                     <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid >
                             <ScrollViewer x:Name="PART_ContentHost"/>
-                            <Label x:Name="ZnakWodny" Content="{TemplateBinding Tag}" Foreground="LightGray" Visibility="Collapsed" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                            <Label x:Name="ZnakWodny" Content="{TemplateBinding Tag}" Foreground="DarkGray" Visibility="Collapsed" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Grid>
                         

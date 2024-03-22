@@ -12,11 +12,11 @@
     </Window.DataContext>
     <Grid Background="#FFBFBCBC">
         <!--TextBoxy-->
-        <TextBox Height="45" Margin="35,61,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.EFirstName}" VerticalAlignment="Top"/>
-        <TextBox Height="45" Margin="35,137,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.ELastName}" VerticalAlignment="Top"/>
-        <TextBox Height="45" Margin="35,219,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Phone}" VerticalAlignment="Top"/>
-        <TextBox Height="45" Margin="35,299,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Mail}" VerticalAlignment="Top"/>
-        <TextBox Height="45" Margin="35,380,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Password}" VerticalAlignment="Top"/>
+        <TextBox Height="45" Margin="35,61,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.EFirstName}" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Height="45" Margin="35,137,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.ELastName}" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Height="45" Margin="35,219,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Phone}" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Height="45" Margin="35,299,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Mail}" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Height="45" Margin="35,380,70.333,0" TextWrapping="Wrap" Text="{Binding ModelEmplo.Password}" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center"/>
 
         <!--Label-->
         <Label Content="Imię" HorizontalAlignment="Left" Margin="34,35,0,0" VerticalAlignment="Top"/>

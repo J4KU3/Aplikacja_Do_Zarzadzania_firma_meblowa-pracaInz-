@@ -33,6 +33,7 @@ namespace SystemDoZarzadzaniaFirmaMeblowa.Commands.Orders
                     var selectedOrder = _mainviewModel.SelectedOrder;
                     if (order != null)
                     {
+                        order.OrderID = selectedOrder.OrderID;
                         order.ClientID =selectedOrder.ClientID;
                         order.employeeID = selectedOrder.employeeID;
                         order.ItemColor = selectedOrder.ItemColor;

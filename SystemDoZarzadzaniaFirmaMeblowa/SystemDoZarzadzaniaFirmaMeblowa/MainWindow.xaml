@@ -14,7 +14,7 @@
     </Window.DataContext>
     <Grid>
         <TabControl Margin="0,-25,0.333,-0.333" SelectedIndex="{Binding SelectedPage}">
-            <TabItem Header="LoginPage"  Visibility="Hidden">
+            <TabItem Header="LoginPage" >
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="206*"/>
@@ -38,7 +38,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="HomePage" Visibility="Hidden">
+            <TabItem Header="HomePage">
 
                 <Grid  Margin="-11,-3,-2.333,-8.667">
                     <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
@@ -88,7 +88,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Pracownicy" Visibility="Hidden">
+            <TabItem Header="Pracownicy">
                 <Grid>
                     <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
                     <Grid>
@@ -122,7 +122,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Zarządzanie Zamowieniami" Visibility="Hidden" >
+            <TabItem Header="Zarządzanie Zamowieniami" >
                 <Grid>
                     <Viewbox>
                         <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33" Width="1179"/>
@@ -141,7 +141,7 @@
                                     <DataGridTextColumn Header="IDKlienta" Binding="{Binding ClientID}"/>
                                     <DataGridTextColumn Header="Imię klienta" Binding="{Binding ClientFName}"/>
                                     <DataGridTextColumn Header="Pracownik" Binding="{Binding EmployeeFName}"/>
-                                    <DataGridTextColumn Header="Data Zamówienia" Binding="{Binding OrderDate}"/>
+                                    <DataGridTextColumn Header="Data Zamówienia" Binding="{Binding OrderDate, StringFormat='{}{0:yyyy-MM-dd}'}"/>
                                     <DataGridTextColumn Header="Nazwa Przedmiotu" Binding="{Binding ItemName}"/>
                                     <DataGridTextColumn Header="Kolor" Binding="{Binding ItemColor}"/>
                                     <DataGridTextColumn Header="Projekt" Binding="{Binding Project}"/>
@@ -252,7 +252,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="klienci" Visibility="Hidden">
+            <TabItem Header="klienci">
                 <Grid>
                     <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
                     <Grid>
@@ -287,7 +287,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="ReklamacjeZRZ" Visibility="Hidden">
+            <TabItem Header="ReklamacjeZRZ">
                 <Grid>
                     <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33"/>
                     <Grid>
@@ -317,7 +317,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Reklamacje" Visibility="Hidden" >
+            <TabItem Header="Reklamacje">
                 <Grid  Margin="-11,-3,-2.333,-8.667">
                     <Viewbox>
                         <Image Source="Zdjecie2.jpg" Margin="-165,-409,-418,-33" Width="1275"/>
@@ -348,7 +348,27 @@
                         <Grid Grid.Column="0">
                             <Label Content="Wybierz zamówienie" FontWeight="Bold" FontSize="24" Margin="10,0,9.667,384.333"/>
 
-                            <ComboBox Cursor="Hand" Margin="10,45,9.667,0" VerticalAlignment="Top" ItemsSource="{Binding ListOfOrders}" DisplayMemberPath="OrderID" Height="35" SelectedItem="{Binding SelectedComplaintsOrder}"/>
+                            <ComboBox Cursor="Hand" Margin="10,45,9.667,0" VerticalAlignment="Top" FontSize="15" ItemsSource="{Binding ListOfOrders}"  Height="35" SelectedItem="{Binding SelectedComplaintsOrder}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock>
+                                                 <Run Text="Nr zamówienia:"/>
+                                                 <Run Text="{Binding OrderID}"/>
+                                             </TextBlock>
+                                            <TextBlock Text=" "/>
+                                            <TextBlock Margin="0,0,10,0">
+                                                <Run Text="Nazwa:"/>
+                                                <Run Text="{Binding ItemName}"/>
+                                            </TextBlock>
+                                            <TextBlock >
+                                                <Run Text="Data:"/>
+                                                <Run Text="{Binding OrderDate, StringFormat='{}{0:yyyy-MM-dd}'}"/>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
 
 
